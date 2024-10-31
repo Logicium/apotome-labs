@@ -6,16 +6,16 @@ import data from "../data/data";
 <template>
   <div class="home">
     <div class="title">
-      <div class="titleText">{{`apotome labs`.toUpperCase()}}</div>
+      <div class="titleText">{{`apotome labs /`.toUpperCase()}}</div>
     </div>
     <div class="subtitle">{{data.about1.toLowerCase()}}</div>
     <div class="imagegrid">
       <div class="titleImage1">
-        <div>006+</div>
+        <div class="reverse">004+</div>
         <div class="imageText">PROJECTS</div>
       </div>
       <div class="titleImage2">
-        <div>est.24'</div>
+        <div class="reverse">est.24'</div>
         <div class="imageText">ABOUT</div>
       </div>
     </div>
@@ -82,6 +82,12 @@ import data from "../data/data";
     background-size: cover;
     background-image: url("../../public/home15.jpg");
     animation: expand-small ease-in-out 1.5s forwards;
+  }
+
+  .reverse{
+    background-color: black;
+    color: #f1f1f1;
+    height: 2rem;
   }
 
   .home{
