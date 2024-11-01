@@ -1,7 +1,19 @@
 const data = {
 
   about1:"From concept to completion, we're your partner in digital transformation. " +
-    "Our focus is on creating beautiful, functional, and user-centric designs that drive results."
+    "Our focus is on creating beautiful, functional, and user-centric designs that drive results.",
+
+  about2:"We're a creative agency specializing in crafting stunning websites and intuitive apps. " +
+    "Our team of designers and developers bring your ideas to life, delivering innovative solutions that captivate your audience.",
+
+  about3:"We believe that great design is more than just aesthetics. " +
+    "It's about solving problems, telling stories, and inspiring action. " +
+    "Let's build something amazing together.",
+
+  about4:"In today's digital age, a strong online presence is essential. " +
+    "We help businesses of all sizes harness the power of the internet to reach their target audience, generate leads, and boost sales. " +
+    "Our services include website design and development, mobile app development, branding, and digital marketing. " +
+    "We're passionate about creating digital experiences that leave a lasting impression.",
 
 }
 

@@ -4,5 +4,9 @@
   font-family: "Work sans", sans-serif;
   min-height: 100vh;
   position: relative;
-  font-size: 1.3rem;
+  font-size: 1.2rem;
+}
+
+.click{
+  cursor: pointer;
 }

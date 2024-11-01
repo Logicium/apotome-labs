@@ -1,33 +1,79 @@
 <script setup lang="ts">
 
 import data from "../data/data";
+import Footer from "@/components/Footer.vue";
+
+const dateObj = new Date(Date.now());
+const date = (dateObj.getMonth()+1)+" / "+dateObj.getDate()
+
 </script>
 
 <template>
   <div class="home">
     <div class="title">
-      <div class="titleText">{{`apotome labs /`.toUpperCase()}}</div>
+      <div class="titleText">{{`apotome labs`.toUpperCase()}}</div>
     </div>
-    <div class="subtitle">{{data.about1.toLowerCase()}}</div>
+    <div class="subtitle">{{data.about1}}</div>
+
     <div class="imagegrid">
       <div class="titleImage1">
-        <div class="reverse">004+</div>
-        <div class="imageText">PROJECTS</div>
+        <div class="reverse"> 004+ </div>
+        <div class="imageText"> PROJECTS </div>
       </div>
       <div class="titleImage2">
-        <div class="reverse">est.24'</div>
-        <div class="imageText">ABOUT</div>
+        <div class="reverse"> est.24' </div>
+        <div class="imageText"> ABOUT </div>
       </div>
     </div>
+
   </div>
+
+  <div class="section2">
+    <div class="imagegrid2">
+      <div class="titleImage3">
+        <div class="reverse"> $199/mo </div>
+        <div class="imageText"> PRICING </div>
+      </div>
+      <div class="titleImage4">
+        <div class="reverse"> {{date}} </div>
+        <div class="imageText"> CONTACT </div>
+      </div>
+    </div>
+
+    <div class="titleWrap">
+      <div class="subtitle2">{{data.about2}}</div>
+      <div class="subtitle3">{{data.about4}}</div>
+      <div class="titleText2">{{`Connect`.toUpperCase()}}</div>
+    </div>
+  </div>
+
+  <Footer/>
+
+
 </template>
 
 <style scoped>
+
+.titleWrap{
+  display: flex;
+  width: 75%;
+  flex-direction: column;
+}
+
+.section2{
+    display: flex;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    padding: 2rem;
+    padding-top: 4rem;
+}
 
 .imageText{
   margin-top: auto;
   margin-left: auto;
   font-weight: 500;
+  white-space: break-spaces;
 }
 
 @keyframes expand-big {
@@ -60,6 +106,14 @@ import data from "../data/data";
     flex-direction: column;
   }
 
+.imagegrid2{
+  height: 100%;
+  width: 25%;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
   .titleImage1{
     cursor: pointer;
     display: flex;
@@ -83,11 +137,46 @@ import data from "../data/data";
     background-image: url("../../public/home15.jpg");
     animation: expand-small ease-in-out 1.5s forwards;
   }
+.titleImage3{
+  cursor: pointer;
+  display: flex;
+  margin-top: 2rem;
+  height: 77%;
+  width: 100%;
+  background-position: 100% 100%;
+  background-size: cover;
+  background-image: url("../../public/home15.jpg");
+  animation: expand-small ease-in-out 1.5s forwards;
+}
+.titleImage4{
+  cursor: pointer;
+  display: flex;
+  margin-top: 2rem;
+  height: 33%;
+  width: 100%;
+  background-position: 100% 100%;
+  background-size: cover;
+  background-image: url("../../public/home13.jpg");
+  animation: expand-big ease-in-out 1.5s forwards;
+
+}
+
+.titleImage5{
+  cursor: pointer;
+  display: flex;
+  margin-top: 2rem;
+  height: 33%;
+  width: 100%;
+  background-position: 100% 100%;
+  background-size: cover;
+  background-image: url("../../public/home13.jpg");
+}
 
   .reverse{
     background-color: black;
     color: #f1f1f1;
     height: 2rem;
+    white-space: break-spaces;
   }
 
   .home{
@@ -105,18 +194,51 @@ import data from "../data/data";
     width: 50%;
   }
 
+.title2{
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
   .titleText{
     margin-top: 3rem;
     font-size: 8rem;
     line-height: 8rem;
-
   }
 
-  .subtitle{
+.titleText2{
+  position: relative;
+  margin-top: auto;
+  font-size: 8rem;
+  line-height: 8rem;
+  margin-left: auto;
+
+}
+
+.subtitle{
     width: 33%;
     margin-top: auto;
-    font-size: 1.3rem;
+    font-size: 1.2rem;
   }
+
+.subtitle2{
+  width: 50%;
+  margin-top: 3rem;
+  margin-left: auto;
+  font-size: 1.2rem;
+  text-align: right;
+}
+
+.subtitle3{
+  width: 50%;
+  margin-top: auto;
+  margin-left: auto;
+  font-size: 1.2rem;
+  text-align: right;
+
+}
 
 
 </style>

@@ -34,7 +34,7 @@ import Navbar from "@/components/NavBar.vue";
 }
 
 .fade-enter-active, .fade-leave-active {
-  transition: opacity 0.5s ease;
+  transition: opacity 1s ease;
 }
 
 .fade-enter-from, .fade-leave-to {
