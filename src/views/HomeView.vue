@@ -1,6 +1,6 @@
 <script setup lang="ts">
 
-import data from "../data/data";
+import data from "@/data/data";
 import Footer from "@/components/Footer.vue";
 
 const dateObj = new Date(Date.now());
