@@ -1,18 +1,81 @@
 <script setup>
+  import {ref} from 'vue';
+  const toggleMenu = ref(false);
+
+  const toggleMenuVisibility = () => {
+      toggleMenu.value = !toggleMenu.value;
+    };
 
 </script>
 
 <template>
   <div class="navbar">
     <div class="title navItem">apotome-labs / </div>
-    <div class="navItems">
-      <div class="navItem">HOME / </div>
-      <div class="navItem">MENU</div>
+
+    <div v-if="!toggleMenu" class="navItems">
+      <div class="menuItemWrap">
+        <div class="navItem menuItem" style="animation-delay: .10s">HOME / </div>
+      </div>
+      <div class="menuItemWrap">
+        <div class="navItem menuItem reverse" @click="toggleMenuVisibility"> MENU </div>
+      </div>
     </div>
+
+    <div v-else class="menu">
+      <div class="navItems">
+        <div class="menuItemWrap">
+          <div class="navItem menuItem" style="animation-delay: .40s">HOME / </div>
+        </div>
+        <div class="menuItemWrap">
+          <div class="navItem menuItem" style="animation-delay: .30s">PROJECTS / </div>
+        </div>
+        <div class="menuItemWrap">
+          <div class="navItem menuItem" style="animation-delay: .20s">PRICING / </div>
+        </div>
+        <div class="menuItemWrap">
+          <div class="navItem menuItem" style="animation-delay: .10s">CONTACT / </div>
+        </div>
+        <div class="navItem menuItem reverse" @click="toggleMenuVisibility"> CLOSE </div>
+      </div>
+    </div>
+
   </div>
+
 </template>
 
 <style scoped>
+
+.menu{
+  margin-left: auto;
+  display: flex;
+  overflow: hidden;
+}
+
+.menuItemWrap{
+  overflow: hidden;
+  display: flex;
+  position: relative;
+  height: 100%;
+}
+
+.menuItem{
+  animation: fade .40s ease-in-out forwards;
+  overflow: hidden;
+  visibility: hidden;
+}
+
+@keyframes fade {
+  from{
+    opacity: 0;
+    transform: translateX(10vw);
+    visibility: hidden;
+  }
+  to{
+    opacity: 1;
+    transform: translateX(0vw);
+    visibility: visible;
+  }
+}
 
 .navbar{
   font-weight: 500;
@@ -36,6 +99,13 @@
 
 .navItems{
   display: flex;
+}
+
+.reverse{
+  background-color: black;
+  color: #f1f1f1;
+  height: 2rem;
+  white-space: break-spaces;
 }
 
 </style>
