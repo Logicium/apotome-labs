@@ -15,6 +15,22 @@ const data = {
     "Our services include website design and development, mobile app development, branding, and digital marketing. " +
     "Our team is committed to staying ahead of the latest trends and technologies, ensuring that your digital presence is always cutting-edge.",
 
+  projects:{
+    intro:"Explore our diverse range of projects, from sleek websites to powerful mobile apps."
+  },
+
+  contact:{
+    intro:"Ready to take your business to the next level? Contact us today to schedule a consultation."
+  },
+
+  about:{
+    intro:"Learn about our mission to empower businesses through innovative technology."
+  },
+
+  pricing:{
+    intro:"Discover our tailored pricing plans to suit your budget and project requirements."
+  },
+
 }
 
 export default data;

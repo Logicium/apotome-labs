@@ -1,4 +1,5 @@
-<script setup>
+<script setup lang="ts">
+
   import {ref} from 'vue';
   const toggleMenu = ref(false);
 
@@ -10,11 +11,13 @@
 
 <template>
   <div class="navbar">
-    <div class="title navItem">apotome-labs / </div>
+    <RouterLink to="/"> <div class="title navItem">apotome-labs / </div> </RouterLink>
 
     <div v-if="!toggleMenu" class="navItems">
       <div class="menuItemWrap">
-        <div class="navItem menuItem" style="animation-delay: .10s">HOME / </div>
+        <RouterLink to="/">
+          <div class="navItem menuItem" style="animation-delay: .10s">HOME / </div>
+        </RouterLink>
       </div>
       <div class="menuItemWrap">
         <div class="navItem menuItem reverse" @click="toggleMenuVisibility"> MENU </div>
@@ -24,16 +27,24 @@
     <div v-else class="menu">
       <div class="navItems">
         <div class="menuItemWrap">
-          <div class="navItem menuItem" style="animation-delay: .40s">HOME / </div>
+          <RouterLink to="/">
+            <div class="navItem menuItem" style="animation-delay: .40s">HOME / </div>
+          </RouterLink>
+        </div>
+          <div class="menuItemWrap">
+            <RouterLink to="/projects">
+              <div class="navItem menuItem" style="animation-delay: .30s">PROJECTS / </div>
+            </RouterLink>
+          </div>
+        <div class="menuItemWrap">
+          <RouterLink to="/pricing">
+            <div class="navItem menuItem" style="animation-delay: .20s">PRICING / </div>
+          </RouterLink>
         </div>
         <div class="menuItemWrap">
-          <div class="navItem menuItem" style="animation-delay: .30s">PROJECTS / </div>
-        </div>
-        <div class="menuItemWrap">
-          <div class="navItem menuItem" style="animation-delay: .20s">PRICING / </div>
-        </div>
-        <div class="menuItemWrap">
-          <div class="navItem menuItem" style="animation-delay: .10s">CONTACT / </div>
+          <RouterLink to="/contact">
+            <div class="navItem menuItem" style="animation-delay: .10s">CONTACT / </div>
+          </RouterLink>
         </div>
         <div class="navItem menuItem reverse" @click="toggleMenuVisibility"> CLOSE </div>
       </div>

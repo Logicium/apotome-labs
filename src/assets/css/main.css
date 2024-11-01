@@ -10,3 +10,8 @@
 .click{
   cursor: pointer;
 }
+
+a{
+  color: initial;
+  text-decoration: none;
+}
