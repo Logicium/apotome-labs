@@ -33,7 +33,7 @@
       </div>
     </div>
     <div class="footerTitle">
-      <div>©APOTOME LABS 2024 /</div>
+      <div>© APOTOME LABS 2024 /</div>
     </div>
   </div>
 </template>

@@ -4,7 +4,7 @@ import data from "@/data/data.ts";
 import Footer from "@/components/Footer.vue";
 
 const dateObj = new Date(Date.now());
-const date = (dateObj.getMonth()+1)+" / "+dateObj.getDate()
+const date = " "+(dateObj.getMonth()+1)+" / "+dateObj.getDate()+" "
 
 </script>
 
@@ -35,7 +35,7 @@ const date = (dateObj.getMonth()+1)+" / "+dateObj.getDate()
         <div class="imageText"> PRICING </div>
       </div>
       <div class="titleImage4">
-        <div class="reverse"> {{date}} </div>
+        <div class="reverse">{{date}}</div>
         <div class="imageText"> CONTACT </div>
       </div>
     </div>
@@ -124,6 +124,7 @@ const date = (dateObj.getMonth()+1)+" / "+dateObj.getDate()
     background-size: cover;
     background-image: url("../../public/home12.jpg");
     animation: expand-big ease-in-out 1.5s forwards;
+    border: solid black 1px;
 
   }
   .titleImage2{
@@ -136,6 +137,7 @@ const date = (dateObj.getMonth()+1)+" / "+dateObj.getDate()
     background-size: cover;
     background-image: url("../../public/home15.jpg");
     animation: expand-small ease-in-out 1.5s forwards;
+    border: solid black 1px;
   }
 .titleImage3{
   cursor: pointer;
@@ -145,8 +147,9 @@ const date = (dateObj.getMonth()+1)+" / "+dateObj.getDate()
   width: 100%;
   background-position: 100% 100%;
   background-size: cover;
-  background-image: url("../../public/home15.jpg");
+  background-image: url("../../public/home16.jpg");
   animation: expand-small ease-in-out 1.5s forwards;
+  border: solid black 1px;
 }
 .titleImage4{
   cursor: pointer;
@@ -158,6 +161,7 @@ const date = (dateObj.getMonth()+1)+" / "+dateObj.getDate()
   background-size: cover;
   background-image: url("../../public/home13.jpg");
   animation: expand-big ease-in-out 1.5s forwards;
+  border: solid black 1px;
 
 }
 
