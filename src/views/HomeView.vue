@@ -41,7 +41,10 @@ const date = " "+(dateObj.getMonth()+1)+" / "+dateObj.getDate()+" "
     </div>
 
     <div class="titleWrap">
-      <div class="subtitle2">{{data.about4}}</div>
+      <div class="subtitle2">
+        <p>{{data.about4.split('.')[0] + ". " + data.about4.split('.')[1]}}.</p>
+        <p class="margin-top">{{data.about4.split('.')[2] + ". " + data.about4.split('.')[3]}}.</p>
+      </div>
 <!--      <div class="subtitle3">{{data.about4}}</div>-->
       <div class="titleText2">{{`Connect`.toUpperCase()}}</div>
     </div>
@@ -229,10 +232,14 @@ const date = " "+(dateObj.getMonth()+1)+" / "+dateObj.getDate()+" "
 
 .subtitle2{
   width: 50%;
-  margin-top: 3rem;
+  margin-top: 2rem;
   margin-left: auto;
   font-size: 1.2rem;
   text-align: right;
+}
+
+.margin-top{
+  margin-top: 2rem;
 }
 
 .subtitle3{

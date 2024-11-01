@@ -13,7 +13,7 @@ const data = {
   about4:"In today's digital age, a strong online presence is essential. " +
     "We help businesses of all sizes harness the power of the internet to reach their target audience, generate leads, and boost sales. " +
     "Our services include website design and development, mobile app development, branding, and digital marketing. " +
-    "We're passionate about creating digital experiences that leave a lasting impression.",
+    "Our team is committed to staying ahead of the latest trends and technologies, ensuring that your digital presence is always cutting-edge.",
 
 }
 
