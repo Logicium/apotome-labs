@@ -35,7 +35,7 @@ const data = {
         "Security Patches and Updates",
         "Domain Management",
         "Technical Support",
-        "Continuous Delivery"
+        "Monthly Contract"
       ],
       tier1:[
         "Custom Website Design and Development",
