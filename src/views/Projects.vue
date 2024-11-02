@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import data from "@/data/data.ts";
+import Footer from "@/components/Footer.vue";
 
 </script>
 
@@ -10,6 +11,7 @@ import data from "@/data/data.ts";
       <div class="subtitle">{{data.projects.intro}}</div>
     </div>
     <div class="imageGrid">
+
       <div class="col">
         <div class="image1">
           <div class="reverse"> 01 </div>
@@ -41,8 +43,8 @@ import data from "@/data/data.ts";
         </div>
       </div>
     </div>
-
   </div>
+<!--  <Footer/>-->
 </template>
 
 <style scoped>
@@ -76,6 +78,7 @@ import data from "@/data/data.ts";
   width: 100%;
   height: 100%;
   margin-top: 2rem;
+  padding-bottom: 2rem;
 }
 
 .col{
@@ -126,13 +129,6 @@ import data from "@/data/data.ts";
 .image5{
   height: 60%;
   margin-top: 2rem;
-}
-
-.reverse {
-  background-color: black;
-  color: #f1f1f1;
-  height: 2rem;
-  white-space: break-spaces;
 }
 
 .imageText {

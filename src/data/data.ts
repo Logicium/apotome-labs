@@ -28,7 +28,41 @@ const data = {
   },
 
   pricing:{
-    intro:"Discover our tailored pricing plans to suit your budget and project requirements."
+    intro:"Discover our tailored pricing plans to suit your budget and project requirements.",
+    tiers:{
+      tier0:[
+        "Website Maintenance and Updates",
+        "Security Patches and Updates",
+        "Domain Management",
+        "Technical Support",
+        "Continuous Delivery"
+      ],
+      tier1:[
+        "Custom Website Design and Development",
+        "Lifecycle Management",
+        "Basic Database Management",
+        "Content Creation and Management",
+        "$20/hr Project Extension",
+        "6 Month Contract"
+      ],
+      tier2:[
+        "Mobile App Development",
+        "E-commerce Functionality",
+        "Branding and Logo Design",
+        "Advanced Database Management",
+        "Third Party Integrations",
+        "$30/hr Project Extension",
+        "8 Month Contract"
+      ],
+      tier3:[
+        "Premium AI Development",
+        "Social Media Management",
+        "Business Automation Services",
+        "Google Analytics Reporting",
+        "$40/hr Project Extension",
+        "12 Month Contract"
+      ],
+    },
   },
 
 }
