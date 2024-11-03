@@ -36,11 +36,11 @@ const route = function (route:string){
   <div class="section2">
     <div class="imagegrid2">
       <div class="titleImage3" @click="route('/pricing')">
-        <div class="reverse"> $199/mo</div>
+        <div class="reverse"> $99 / mo </div>
         <div class="imageText"> PRICING</div>
       </div>
       <div class="titleImage4" @click="route('/contact')">
-        <div class="reverse">{{ date }}</div>
+        <div class="reverse">{{date}}</div>
         <div class="imageText"> CONTACT</div>
       </div>
     </div>

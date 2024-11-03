@@ -20,7 +20,7 @@ const data = {
   },
 
   contact:{
-    intro:"Ready to take your business to the next level? Contact us today to schedule a consultation."
+    intro:"Ready to take your business to the next level? Contact us to schedule a free consultation."
   },
 
   about:{
@@ -39,8 +39,8 @@ const data = {
       ],
       tier1:[
         "Custom Website Design and Development",
-        "Lifecycle Management",
         "Basic Database Management",
+        "Website Performance Optimization",
         "Content Creation and Management",
         "$20/hr Project Extension",
         "6 Month Contract"
