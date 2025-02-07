@@ -12,20 +12,20 @@ import data from "@/data/data.ts";
   <div class="contactWrap">
 
     <div class="bookingWrap">
-      <div class="buttonWrap">
-        <div class="bookButton reverse"> BOOK MEETING </div>
-      </div>
+      <iframe src="https://calendar.google.com/calendar/appointments/schedules/AcZssZ22cRxVuk1vxqAB_b7HRGxNmQQyaZrVbJUeaXExj3gaWrvkftt-xt9XJRUhLylXnAJUJN389nDG?gv=true" style="border: 0" width="100%" height="600" frameborder="0"></iframe>
+<!--      <div class="buttonWrap">-->
+<!--        <div class="bookButton reverse"> BOOK MEETING </div>-->
+<!--      </div>-->
     </div>
 
-    <div class="messageWrap">
-      <input class="text" type="text" name="name" placeholder="name" v-model="name"/>
-      <input class="text" type="email" name="email" placeholder="email" v-model="email"/>
-      <input class="text" type="text" name="subject" placeholder="subject" v-model="subject"/>
-      <textarea class="message" type="text" name="message" placeholder="message" v-model="message"/>
-      <div class="bookButtonWrap">
-        <div class="bookButton reverse"> SEND MESSAGE </div>
-      </div>
-    </div>
+<!--    <div class="messageWrap">-->
+<!--      <input class="text" type="text" name="name" placeholder="name" v-model="name"/>-->
+<!--      <input class="text" type="email" name="email" placeholder="email" v-model="email"/>-->
+<!--      <textarea class="message" type="text" name="message" placeholder="message" v-model="message"/>-->
+<!--      <div class="bookButtonWrap">-->
+<!--        <div class="bookButton reverse"> SEND MESSAGE </div>-->
+<!--      </div>-->
+<!--    </div>-->
 
   </div>
 </div>
@@ -57,7 +57,7 @@ input,textarea{
 }
 
 .bookButtonWrap{
-  border: 1px solid black;
+  border: none;
 }
 
 .bookingWrap{
@@ -73,7 +73,7 @@ input,textarea{
 
 .contactWrap{
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
   grid-template-rows: 100%;
   grid-gap: 2rem;
   padding-top: 2rem;

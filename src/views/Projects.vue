@@ -1,6 +1,11 @@
 <script setup lang="ts">
 import data from "@/data/data.ts";
 import Footer from "@/components/Footer.vue";
+import router from "@/router";
+
+const route = function (route:string){
+  router.push(route);
+}
 
 </script>
 
@@ -13,34 +18,41 @@ import Footer from "@/components/Footer.vue";
     <div class="imageGrid">
 
       <div class="col">
-        <div class="image1">
+        <div class="image1" style="background-image: url('../../public/flora.png')">
+          <a href="https://flora-a8fzk070t-kisorathomas-projects.vercel.app/" target="_blank"/>
           <div class="reverse"> 01 </div>
-          <div class="imageText"> PORTFOLIO / KISORA </div>
+          <div class="imageText reverse"> E-STORE / FLORA </div>
         </div>
         <div class="image2">
+          <a href="https://beta-ui-one.vercel.app/" target="_blank"/>
           <div class="reverse"> 02 </div>
-          <div class="imageText"> WEBSITE / FLORA </div>
+          <div class="imageText reverse"> DESIGN / BETA  </div>
         </div>
       </div>
       <div class="col">
 
       </div>
       <div class="col">
-        <div class="image4">
-          <div class="reverse"> 03 </div>
-          <div class="imageText"> APP / PLANTAE </div>
-        </div>
         <div class="image5">
-          <div class="reverse"> 04 </div>
-          <div class="imageText"> WEBSITE / FLORACIA </div>
+          <a href="https://gamma-ui-phi.vercel.app/" target="_blank"/>
+          <div class="reverse"> 03 </div>
+          <div class="imageText reverse"> DESIGN / GAMMA </div>
         </div>
+
       </div>
 
       <div class="col3">
-        <div class="image3">
-          <div class="reverse"> 05 </div>
-          <div class="imageText"> AI / FUERA </div>
+
+        <div class="image3" style="background-image: url('../../public/floracia.png')">
+          <a href="https://floracia.vercel.app/" target="_blank"/>
+          <div class="reverse"> 04 </div>
+          <div class="imageText reverse"> WEBSITE / FLORACIA </div>
         </div>
+<!--        <div class="image3">-->
+<!--          <div class="reverse"> 05 </div>-->
+<!--          <div class="imageText"> AI / FUERA </div>-->
+<!--        </div>-->
+
       </div>
     </div>
   </div>
@@ -102,12 +114,19 @@ import Footer from "@/components/Footer.vue";
 }
 
 .image1,.image2,.image3,.image4,.image5{
+  position: relative;
   background-position: 100% 100%;
   background-size: cover;
   background-image: url("../../public/home13.jpg");
   border: solid black 1px;
   display: flex;
   cursor: pointer;
+}
+
+a{
+position: absolute;
+  height: 100%;
+  width: 100%;
 }
 
 .image1{
@@ -117,6 +136,7 @@ import Footer from "@/components/Footer.vue";
 .image2{
   height: 20%;
   margin-top: 2rem;
+  background-image: url("../../public/beta.png");
 }
 
 .image3{
@@ -125,10 +145,12 @@ import Footer from "@/components/Footer.vue";
 
 .image4{
   height: 20%;
+  background-image: url("../../public/gamma.png");
 }
 .image5{
   height: 60%;
-  margin-top: 2rem;
+  //margin-top: 2rem;
+  background-image: url("../../public/gamma.png");
 }
 
 .imageText {

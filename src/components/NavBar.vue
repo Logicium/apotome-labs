@@ -59,11 +59,11 @@
 .menu{
   margin-left: auto;
   display: flex;
-  overflow: hidden;
+  //overflow: hidden;
 }
 
 .menuItemWrap{
-  overflow: hidden;
+  //overflow: hidden;
   display: flex;
   position: relative;
   height: 100%;
