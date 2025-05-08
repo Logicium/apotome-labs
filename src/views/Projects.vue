@@ -18,7 +18,7 @@ const route = function (route:string){
     <div class="imageGrid">
 
       <div class="col">
-        <div class="image1" style="background-image: url('../../public/flora.png')">
+        <div class="image1">
           <a href="https://flora-a8fzk070t-kisorathomas-projects.vercel.app/" target="_blank"/>
           <div class="reverse"> 01 </div>
           <div class="imageText reverse"> E-STORE / FLORA </div>
@@ -43,7 +43,7 @@ const route = function (route:string){
 
       <div class="col3">
 
-        <div class="image3" style="background-image: url('../../public/floracia.png')">
+        <div class="image3">
           <a href="https://floracia.vercel.app/" target="_blank"/>
           <div class="reverse"> 04 </div>
           <div class="imageText reverse"> WEBSITE / FLORACIA </div>
@@ -131,6 +131,7 @@ position: absolute;
 
 .image1{
   height: calc(40%);
+  background-image: url('../../public/flora.png');
 }
 
 .image2{
@@ -141,6 +142,7 @@ position: absolute;
 
 .image3{
   height: calc(100%);
+  background-image: url('../../public/floracia.png');
 }
 
 .image4{
