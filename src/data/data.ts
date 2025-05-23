@@ -15,6 +15,35 @@ const data = {
     "Our services include website design and development, mobile app development, branding, and digital marketing. " +
     "Our team is committed to staying ahead of the latest trends and technologies, ensuring that your digital presence is always cutting-edge.",
 
+  services:{
+    intro: "Discover our comprehensive range of digital services, from web development to branding, tailored to help your business thrive in the digital landscape."
+  },
+
+  reviews:{
+    intro:"See what our customers are saying about us. We're proud to have worked with some of the best businesses in the area.",
+    list:[
+      {
+        quote: "They transformed our online presence completely, taking us from an outdated website to a modern digital platform that our customers love.",
+        content: "Apotome Labs delivered beyond our expectations. Their team was professional, responsive, and brought creative solutions to every challenge. The new website has significantly improved our customer engagement and sales.",
+        name: "Sarah Mitchell",
+        company: "Green Valley Organics"
+      },
+      {
+        quote: "Outstanding technical expertise and customer service - their team went above and beyond to understand our unique needs and deliver exactly what we wanted.",
+        content: "Working with Apotome Labs was a game-changer for our startup. They not only built us a beautiful website but also provided valuable insights into digital strategy. Their attention to detail and commitment to quality is exceptional.",
+        name: "Michael Chang",
+        company: "TechFlow Solutions"
+      },
+      {
+        quote: "The best decision we made for our business! Their expertise and dedication to quality helped us achieve results we didn't think were possible.",
+        content: "From the initial consultation to the final launch, Apotome Labs demonstrated exceptional professionalism. They understood our vision perfectly and created a website that perfectly represents our brand. The ongoing support has been invaluable.",
+        name: "Jessica Anderson",
+        company: "Stellar Design Co."
+      }
+
+    ]
+  },
+
   projects:{
     intro:"Explore our diverse range of projects, from sleek websites to powerful mobile apps."
   },

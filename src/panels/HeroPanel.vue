@@ -32,7 +32,7 @@ import ArrowIcon from "@/assets/icons/ArrowIcon.vue";
           </div>
 
           <div class="card">
-            <div class="big num">5+</div>
+            <div class="big num">10+</div>
             <div>CLIENTS</div>
           </div>
 
@@ -59,7 +59,6 @@ import ArrowIcon from "@/assets/icons/ArrowIcon.vue";
 
 .panel{
   padding-top: 100px;
-  height: calc(100vh - 100px - 2rem);
   grid-template-rows: auto 2fr 1fr;
   display: grid;
   grid-gap: 2rem;

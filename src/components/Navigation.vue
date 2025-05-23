@@ -34,6 +34,7 @@ nav{
   max-height: 100px;
   width: calc(100% - 4rem);
   background-color: white;
+  z-index: 10;
 }
 
 .links{
