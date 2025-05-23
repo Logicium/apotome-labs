@@ -117,7 +117,7 @@ const route = function (route:string){
   position: relative;
   background-position: 100% 100%;
   background-size: cover;
-  background-image: url("../../public/home13.jpg");
+  background-image: url("../../public/abstract/home13.jpg");
   border: solid black 1px;
   display: flex;
   cursor: pointer;
@@ -131,28 +131,28 @@ position: absolute;
 
 .image1{
   height: calc(40%);
-  background-image: url('../../public/flora.png');
+  background-image: url('../../public/projects/flora.png');
 }
 
 .image2{
   height: 20%;
   margin-top: 2rem;
-  background-image: url("../../public/beta.png");
+  background-image: url("../../public/projects/beta.png");
 }
 
 .image3{
   height: calc(100%);
-  background-image: url('../../public/floracia.png');
+  background-image: url('../../public/projects/floracia.png');
 }
 
 .image4{
   height: 20%;
-  background-image: url("../../public/gamma.png");
+  background-image: url("../../public/projects/gamma.png");
 }
 .image5{
   height: 60%;
   //margin-top: 2rem;
-  background-image: url("../../public/gamma.png");
+  background-image: url("../../public/projects/gamma.png");
 }
 
 .imageText {

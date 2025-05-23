@@ -131,7 +131,7 @@ const route = function (route:string){
   height: 33%;
   background-position: 100% 100%;
   background-size: cover;
-  background-image: url("../../public/home12.jpg");
+  background-image: url("../../public/abstract/home12.jpg");
   animation: expand-big ease-in-out 1.5s forwards;
   border: solid black 1px;
 
@@ -145,7 +145,7 @@ const route = function (route:string){
   width: 100%;
   background-position: 100% 100%;
   background-size: cover;
-  background-image: url("../../public/home15.jpg");
+  background-image: url("../../public/abstract/home15.jpg");
   animation: expand-small ease-in-out 1.5s forwards;
   border: solid black 1px;
 }
@@ -158,7 +158,7 @@ const route = function (route:string){
   width: 100%;
   background-position: 100% 100%;
   background-size: cover;
-  background-image: url("../../public/home16.jpg");
+  background-image: url("../../public/abstract/home16.jpg");
   animation: expand-small ease-in-out 1.5s forwards;
   border: solid black 1px;
 }
@@ -171,7 +171,7 @@ const route = function (route:string){
   width: 100%;
   background-position: 100% 100%;
   background-size: cover;
-  background-image: url("../../public/home13.jpg");
+  background-image: url("../../public/abstract/home13.jpg");
   animation: expand-big ease-in-out 1.5s forwards;
   border: solid black 1px;
 
@@ -185,7 +185,7 @@ const route = function (route:string){
   width: 100%;
   background-position: 100% 100%;
   background-size: cover;
-  background-image: url("../../public/home13.jpg");
+  background-image: url("../../public/abstract/home13.jpg");
 }
 
 .reverse {

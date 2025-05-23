@@ -54,7 +54,7 @@
 
 </template>
 
-<style scoped>
+<style scoped lang="scss">
 
 .menu{
   margin-left: auto;

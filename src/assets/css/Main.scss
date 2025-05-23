@@ -1,0 +1,28 @@
+@import "Buttons";
+@import "Text";
+
+#app {
+  font-family: "Work sans", sans-serif;
+  min-height: 100vh;
+  position: relative;
+  font-size: 1rem;
+}
+
+body{
+  margin: 0;
+}
+
+a{
+  color: initial;
+  text-decoration: none;
+}
+
+.panel{
+  height: calc(100vh - 100px);
+  padding: 2rem;
+}
+
+.image{
+  background-size: cover;
+  background-position: center;
+}

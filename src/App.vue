@@ -2,13 +2,14 @@
 import { RouterView } from 'vue-router'
 
 import Navbar from "@/components/NavBar.vue";
+import Navigation from "@/components/Navigation.vue";
 
 </script>
 
 <template>
 
   <div class="webapp">
-    <Navbar/>
+    <Navigation/>
     <div class="row">
       <RouterView v-slot="{ Component, route }" appear>
         <transition name="fade" mode="out-in">
@@ -27,10 +28,6 @@ import Navbar from "@/components/NavBar.vue";
 .webapp{
   height: 100vh;
   position: relative;
-}
-
-.row{
-  height: 100%;
 }
 
 .fade-enter-active, .fade-leave-active {
