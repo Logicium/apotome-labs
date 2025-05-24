@@ -133,14 +133,6 @@ import ArrowIcon from "@/assets/icons/ArrowIcon.vue";
   width: fit-content;
 }
 
-.tag{
-  margin-top: 1rem;
-  background-color: #a8a8a8;
-  width: fit-content;
-  color: white;
-  white-space: break-spaces;
-}
-
 .img1{
   background-image: url("/projects/beta.png");
 }

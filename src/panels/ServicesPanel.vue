@@ -2,6 +2,7 @@
 
 import data from "../data/data.ts";
 import PlusIcon from "@/assets/icons/PlusIcon.vue";
+import ServiceCard from "@/components/cards/ServiceCard.vue";
 </script>
 
 <template>
@@ -14,45 +15,14 @@ import PlusIcon from "@/assets/icons/PlusIcon.vue";
   <div class="serviceGrid">
 
     <div class="services">
-
-      <div class="service">
-        <div class="small num">01</div>
-        <div class="med">USER INTERFACE DESIGN</div>
-        <div class="control big">+</div>
-      </div>
-
-      <div class="service">
-        <div class="small num">02</div>
-        <div class="med">WEB & MOBILE APP DEVELOPMENT</div>
-        <div class="control big">+</div>
-      </div>
-
-      <div class="service">
-        <div class="small num">03</div>
-        <div class="med">ECOMMERCE SOLUTIONS</div>
-        <div class="control big">+</div>
-      </div>
-
-      <div class="service">
-        <div class="small num">04</div>
-        <div class="med">SEARCH ENGINE OPTIMIZATION</div>
-        <div class="control big">+</div>
-      </div>
-
-      <div class="service">
-        <div class="small num">05</div>
-        <div class="med">DIGITAL MARKETING</div>
-        <div class="control big">+</div>
-      </div>
-
-      <div class="service">
-        <div class="small num">06</div>
-        <div class="med">ARTIFICIAL INTELLIGENCE</div>
-        <div class="control big">+</div>
-      </div>
-
-
-
+      <ServiceCard
+        v-for="service in data.services.list"
+        :key="service.number"
+        :number="service.number"
+        :name="service.name"
+        :desc="service.desc"
+        :tags="service.tags"
+      />
     </div>
 
     <div class="image serviceImage">
@@ -84,26 +54,8 @@ import PlusIcon from "@/assets/icons/PlusIcon.vue";
   flex-direction: column;
 }
 
-.service{
-  display: flex;
-  gap: 1rem;
-  padding: 1rem 0;
-  border-bottom: 1px solid black;
-}
-
 .serviceImage{
   background-image: url("/agency/agency2.jpg");
-}
-
-.control{
-  margin-left: auto;
-  line-height: 1.5rem;
-  font-weight: 200;
-  cursor: pointer;
-}
-
-.num{
-  color: #a8a8a8;
 }
 
 </style>

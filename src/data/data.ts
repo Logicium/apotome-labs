@@ -16,7 +16,45 @@ const data = {
     "Our team is committed to staying ahead of the latest trends and technologies, ensuring that your digital presence is always cutting-edge.",
 
   services:{
-    intro: "Discover our comprehensive range of digital services, from web development to branding, tailored to help your business thrive in the digital landscape."
+    intro: "Discover our comprehensive range of digital services, from web development to branding, tailored to help your business thrive in the digital landscape.",
+    list: [
+      {
+        number: "01",
+        name: "USER INTERFACE DESIGN",
+        desc: "Creating intuitive, visually appealing interfaces that enhance user experience across all digital platforms through our research-driven UI design process that ensures beautiful and functional digital products.",
+        tags: ["UI/UX", "Design", "Wireframing"]
+      },
+      {
+        number: "02",
+        name: "WEB & MOBILE APP DEVELOPMENT",
+        desc: "Building responsive websites and powerful mobile applications tailored to your business needs using the latest technologies to deliver high-performance, scalable solutions that work flawlessly across all devices and platforms.",
+        tags: ["Web", "Mobile", "Development"]
+      },
+      {
+        number: "03",
+        name: "ECOMMERCE SOLUTIONS",
+        desc: "Developing secure, scalable online stores with custom payment gateways, inventory management, and personalized shopping features that provide seamless experiences and convert visitors into loyal customers.",
+        tags: ["Ecommerce", "Sales", "Online Store"]
+      },
+      {
+        number: "04",
+        name: "SEARCH ENGINE OPTIMIZATION",
+        desc: "Improving your website's visibility in search results through comprehensive SEO strategies including keyword research, on-page optimization, technical SEO, and quality content creation to help your business attract more traffic and stay ahead of competitors.",
+        tags: ["SEO", "Traffic", "Rankings"]
+      },
+      {
+        number: "05",
+        name: "DIGITAL MARKETING",
+        desc: "Creating comprehensive marketing strategies across digital channels with social media management, email campaigns, content marketing, and paid advertising to promote your brand, reach your target audience, maximize ROI, and build lasting customer relationships.",
+        tags: ["Marketing", "Advertising", "Social Media"]
+      },
+      {
+        number: "06",
+        name: "ARTIFICIAL INTELLIGENCE",
+        desc: "Implementing cutting-edge AI solutions with machine learning, natural language processing, computer vision, and predictive analytics to automate processes, analyze data, provide personalized experiences, and help your business make smarter decisions.",
+        tags: ["AI", "Machine Learning", "Automation"]
+      }
+    ]
   },
 
   reviews:{
