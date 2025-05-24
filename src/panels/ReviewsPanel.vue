@@ -108,10 +108,6 @@ const decrementReviews = () => {
   gap: 1rem;
 }
 
-.gray{
-  color: #a8a8a8;
-}
-
 .click{
   cursor: pointer;
 }

@@ -76,8 +76,8 @@ const data = {
       {
         quote: "The best decision we made for our business! Their expertise and dedication to quality helped us achieve results we didn't think were possible.",
         content: "From the initial consultation to the final launch, Apotome Labs demonstrated exceptional professionalism. They understood our vision perfectly and created a website that perfectly represents our brand. The ongoing support has been invaluable.",
-        name: "Jessica Anderson",
-        company: "Stellar Design Co."
+        name: "Margaret Hunt",
+        company: "Margaret Hunt Gallery"
       }
 
     ]
@@ -98,39 +98,58 @@ const data = {
   pricing:{
     intro:"Discover our tailored pricing plans to suit your budget and project requirements.",
     tiers:{
-      tier0:[
-        "Website Maintenance and Updates",
-        "Security Patches and Updates",
-        "Domain Management",
-        "Technical Support",
-        "Monthly Contract"
-      ],
-      tier1:[
-        "Custom Website Design and Development",
-        "Basic Database Management",
-        "Website Performance Optimization",
-        "Content Creation and Management",
-        "$20/hr Project Extension",
-        "6 Month Contract"
-      ],
-      tier2:[
-        "Mobile App Development",
-        "E-commerce Functionality",
-        "Branding and Logo Design",
-        "Advanced Database Management",
-        "Third Party Integrations",
-        "$30/hr Project Extension",
-        "8 Month Contract"
-      ],
-      tier3:[
-        "Premium AI Development",
-        "Social Media Management",
-        "Business Automation Services",
-        "Google Analytics Reporting",
-        "$40/hr Project Extension",
-        "12 Month Contract"
-      ],
+      tier1:{
+        name:"01 Startup",
+        price:"$800",
+        duration: "/project",
+        desc: "Perfect for small businesses looking to establish or refresh their online presence with a custom-designed website and basic content management capabilities.",
+        features: [
+          "Custom Website Design and Development",
+          "Basic Database Management",
+          "Mobile Responsive Design",
+          "Content Creation and Management",
+        ]
+      },
+      tier2:{
+        name:"02 Growth",
+        price:"$1600",
+        duration: "/project",
+        desc: "Comprehensive digital solution for growing businesses, including mobile app development, e-commerce functionality, and brand identity design.",
+        features: [
+          "Everything in Startup Package",
+          "Mobile App Development",
+          "E-commerce Functionality",
+          "Advanced Database Management",
+          "Third Party Integrations",
+        ]
+      },
+      tier3:{
+        name:"03 Enterprise",
+        price:"$3400+",
+        duration: "/project",
+        desc: "Premium package for enterprises seeking cutting-edge technology solutions, including AI development, business automation, and comprehensive analytics reporting.",
+        features: [
+          "Everything in Growth Package",
+          "Premium AI Features",
+          "Social Media Management",
+          "Business Automation Services",
+          "Predictive Analytics",
+        ]
+      },
+      // tier0:{
+      //   name:"00 Maintenance",
+      //   price: "$60",
+      //   duration: "/month",
+      //   desc: "Essential maintenance package for existing websites, providing regular updates and reliable technical support to keep your site secure and running smoothly.",
+      //   features: [
+      //     "Website Maintenance and Updates",
+      //     "Security Patches and Updates",
+      //     "Domain Management",
+      //     "Technical Support",
+      //   ]
+      // },
     },
+
   },
 
 }
