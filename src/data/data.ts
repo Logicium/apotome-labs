@@ -63,8 +63,9 @@ const data = {
       {
         quote: "They transformed our online presence completely, taking us from an outdated website to a modern digital platform that our customers love.",
         content: "Apotome Labs delivered beyond our expectations. Their team was professional, responsive, and brought creative solutions to every challenge. The new website has significantly improved our customer engagement and sales.",
-        name: "Sarah Mitchell",
-        company: "Green Valley Organics"
+        name: "Zach Stormant",
+        company: "Stormant Designs",
+        image:"/clients/zach.jpg",
       },
       {
         quote: "Outstanding technical expertise and customer service - their team went above and beyond to understand our unique needs and deliver exactly what we wanted.",

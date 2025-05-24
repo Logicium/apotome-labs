@@ -1,6 +1,18 @@
 <script setup lang="ts">
 
 import data from "../data/data.ts";
+import {ref} from "vue";
+
+const reviewIndex = ref(0);
+
+const incrementReviews = () => {
+  reviewIndex.value = (reviewIndex.value + 1) % data.reviews.list.length;
+}
+
+const decrementReviews = () => {
+  reviewIndex.value = (reviewIndex.value - 1 + data.reviews.list.length) % data.reviews.list.length;
+}
+
 </script>
 
 <template>
@@ -12,22 +24,22 @@ import data from "../data/data.ts";
     </div>
     <div class="grid">
       <div class="infoCol">
-        <div class="med quote">"{{data.reviews.list[0].quote}}"</div>
+        <div class="med quote">"{{data.reviews.list[reviewIndex].quote}}"</div>
         <div>
-          <div class="small content">"{{data.reviews.list[0].content}}"</div>
+          <div class="small content">"{{data.reviews.list[reviewIndex].content}}"</div>
           <div class="reviewerRow">
             <div class="reviewerImage image">
 
             </div>
             <div class="reviewerInfo">
-              <div class="">ZACH STORMANT</div>
-              <div class="gray">STORMANT DESIGNS</div>
+              <div class="">{{data.reviews.list[reviewIndex].name.toUpperCase()}}</div>
+              <div class="gray">{{data.reviews.list[reviewIndex].company.toUpperCase()}}</div>
             </div>
             <div class="buttons flex med">
-              <div>
+              <div class="click" @click="decrementReviews">
                 <
               </div>
-              <div>
+              <div class="click" @click="incrementReviews">
                 >
               </div>
             </div>
@@ -98,6 +110,10 @@ import data from "../data/data.ts";
 
 .gray{
   color: #a8a8a8;
+}
+
+.click{
+  cursor: pointer;
 }
 
 
