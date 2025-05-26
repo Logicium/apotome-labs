@@ -95,6 +95,15 @@ const data = {
     intro:"Learn about our mission to empower businesses through innovative technology."
   },
 
+  cta:{
+    intro: "Take the first step towards transforming your digital presence. Book a free consultation today and let's discuss how we can help your business grow with innovative digital solutions.",
+  },
+
+  footer: {
+    visitText: "Visit Us",
+    copyright: `© ${new Date().getFullYear()}. All Rights Reserved.`
+  },
+
   pricing:{
     intro:"Discover our tailored pricing plans to suit your budget and project requirements.",
     tiers:{

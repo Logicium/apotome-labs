@@ -46,7 +46,6 @@ nav{
   width: 35px;
   height: 35px;
   background-color: black;
-
   margin-right: 1rem;
   color: white;
   display: flex;

@@ -5,6 +5,7 @@ import ServicesPanel from "@/panels/ServicesPanel.vue";
 import ProjectsPanel from "@/panels/ProjectsPanel.vue";
 import ReviewsPanel from "@/panels/ReviewsPanel.vue";
 import PricingPanel from "@/panels/PricingPanel.vue";
+import FooterPanel from "@/panels/FooterPanel.vue";
 
 </script>
 
@@ -15,6 +16,7 @@ import PricingPanel from "@/panels/PricingPanel.vue";
     <ProjectsPanel/>
     <ReviewsPanel/>
     <PricingPanel/>
+    <FooterPanel/>
   </div>
 
 </template>

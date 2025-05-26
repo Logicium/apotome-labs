@@ -36,10 +36,10 @@ const decrementReviews = () => {
               <div class="gray">{{data.reviews.list[reviewIndex].company.toUpperCase()}}</div>
             </div>
             <div class="buttons flex med">
-              <div class="click" @click="decrementReviews">
+              <div class="button" @click="decrementReviews">
                 <
               </div>
-              <div class="click" @click="incrementReviews">
+              <div class="button" @click="incrementReviews">
                 >
               </div>
             </div>
@@ -108,8 +108,17 @@ const decrementReviews = () => {
   gap: 1rem;
 }
 
-.click{
+.button{
   cursor: pointer;
+  width: 45px;
+  padding: 0;
+  transition: 0.5s;
+}
+
+.button:hover{
+  background-color: black;
+  color: white;
+  transition: 0.5s;
 }
 
 
