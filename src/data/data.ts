@@ -70,14 +70,16 @@ const data = {
       {
         quote: "Outstanding technical expertise and customer service - their team went above and beyond to understand our unique needs and deliver exactly what we wanted.",
         content: "Working with Apotome Labs was a game-changer for our startup. They not only built us a beautiful website but also provided valuable insights into digital strategy. Their attention to detail and commitment to quality is exceptional.",
-        name: "Michael Chang",
-        company: "TechFlow Solutions"
+        name: "Tom Murphy",
+        company: "Eternal Float Spa & Wellness Center",
+        image:"/clients/tom.jpg",
       },
       {
         quote: "The best decision we made for our business! Their expertise and dedication to quality helped us achieve results we didn't think were possible.",
         content: "From the initial consultation to the final launch, Apotome Labs demonstrated exceptional professionalism. They understood our vision perfectly and created a website that perfectly represents our brand. The ongoing support has been invaluable.",
         name: "Margaret Hunt",
-        company: "Margaret Hunt Gallery"
+        company: "Margaret Hunt Gallery",
+        image:"/clients/hunt.jpg",
       }
 
     ]
@@ -89,7 +91,7 @@ const data = {
       {
         name: "BETA STUDIO",
         type: "TEMPLATE",
-        description: "A full booking and rewards system built with Square payments.",
+        description: "A modern, mobile ready template project that can be modified for your needs.",
         image: "/projects/beta.png",
         featured: true
       },

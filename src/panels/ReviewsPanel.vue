@@ -1,11 +1,15 @@
 <script setup lang="ts">
 
 import data from "../data/data.ts";
-import {ref} from "vue";
+import {computed, reactive, ref} from "vue";
 import LeftIcon from "@/assets/icons/LeftIcon.vue";
 import RightIcon from "@/assets/icons/RightIcon.vue";
 
 const reviewIndex = ref(0);
+
+const reviewData = ref(data.reviews.list);
+
+const imageUrl = computed(()=> 'url("'+reviewData.value[reviewIndex.value].image+'")');
 
 const incrementReviews = () => {
   reviewIndex.value = (reviewIndex.value + 1) % data.reviews.list.length;
@@ -14,6 +18,7 @@ const incrementReviews = () => {
 const decrementReviews = () => {
   reviewIndex.value = (reviewIndex.value - 1 + data.reviews.list.length) % data.reviews.list.length;
 }
+
 
 </script>
 
@@ -98,14 +103,16 @@ const decrementReviews = () => {
 
 .reviewerImage{
   width: 150px;
+  min-width: 150px;
   height: 150px;
   margin-right: 1rem;
   background-color: #a8a8a8;
-  background-image: url("/clients/zach.jpg");
+  background-image: v-bind(imageUrl);
   filter: grayscale(1);
 }
 
 .buttons{
+  padding-left: 1rem;
   margin-left: auto;
   gap: 1rem;
   font-weight: 200;
