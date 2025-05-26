@@ -8,7 +8,7 @@ const props = defineProps(['name', 'type', 'description', 'image', 'featured']);
     <div class="projectInfo">
       <div>
         <div class="med">{{ name }}</div>
-        <div class="tag"> {{ type }} </div>
+        <div class="tag">&nbsp;{{ type }}&nbsp;</div>
       </div>
 
       <div>

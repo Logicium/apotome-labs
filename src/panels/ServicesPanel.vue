@@ -1,8 +1,23 @@
 <script setup lang="ts">
 
+import { ref } from "vue";
 import data from "../data/data.ts";
 import PlusIcon from "@/assets/icons/PlusIcon.vue";
 import ServiceCard from "@/components/cards/ServiceCard.vue";
+
+// Track which service card is currently active
+const activeServiceNumber = ref(null);
+
+// Function to handle toggle events from ServiceCard components
+const handleToggle = (serviceNumber) => {
+  // If the clicked card is already active, deactivate it
+  if (activeServiceNumber.value === serviceNumber) {
+    activeServiceNumber.value = null;
+  } else {
+    // Otherwise, make the clicked card active
+    activeServiceNumber.value = serviceNumber;
+  }
+};
 </script>
 
 <template>
@@ -22,6 +37,8 @@ import ServiceCard from "@/components/cards/ServiceCard.vue";
         :name="service.name"
         :desc="service.desc"
         :tags="service.tags"
+        :is-active="activeServiceNumber === service.number"
+        @toggle="handleToggle"
       />
     </div>
 
