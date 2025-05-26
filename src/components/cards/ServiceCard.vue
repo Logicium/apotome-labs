@@ -65,6 +65,7 @@ const toggleCard = () => {
   margin-left: auto;
   line-height: 1.5rem;
   font-weight: 200;
+  width: 30px;
   cursor: pointer;
   display: flex;
 }
@@ -100,8 +101,8 @@ const toggleCard = () => {
 
 .plus-icon {
   position: relative;
-  width: 16px;
-  height: 16px;
+  width: 25px;
+  height: 20px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -110,7 +111,7 @@ const toggleCard = () => {
 .line {
   background-color: black;
   position: absolute;
-  transition: transform 0.3s ease;
+  transition: transform 0.5s ease;
 }
 
 .horizontal {
