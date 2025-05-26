@@ -18,15 +18,11 @@ import InstaIcon from "@/assets/icons/InstaIcon.vue";
       </div>
     </div>
 
-<!--    <div class="imageRow">-->
-<!--      <div class="image">-->
-<!--        <div class="logoWrap">-->
-<!--          <div class="logo">///</div>-->
-<!--          <div class="med">APOTOME LABS</div>-->
-<!--        </div>-->
+    <div class="imageRow">
+      <div class="image">
 
-<!--      </div>-->
-<!--    </div>-->
+      </div>
+    </div>
 
     <div class="footer">
 
@@ -96,9 +92,8 @@ import InstaIcon from "@/assets/icons/InstaIcon.vue";
 <style scoped lang="scss">
 
 .panel{
-  height: auto;
   display: grid;
-  grid-template-rows: auto auto;
+  grid-template-rows: auto 1fr auto;
 }
 
 .panelInfo{
@@ -152,6 +147,7 @@ import InstaIcon from "@/assets/icons/InstaIcon.vue";
 }
 .imageRow{
   margin-bottom: 2rem;
+  padding-bottom: 2rem;
 }
 
 .image{
