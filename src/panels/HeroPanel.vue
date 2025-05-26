@@ -12,8 +12,8 @@ import ArrowIcon from "@/assets/icons/ArrowIcon.vue";
       <div class="infoRow">
         <div class="subtitle small">{{data.about2}}</div>
         <div class="buttons">
-          <div class="button">View Projects</div>
-          <div class="button cta">Get Started <ArrowIcon/></div>
+          <div class="button">VIEW PROJECTS</div>
+          <div class="button cta">GET STARTED <ArrowIcon/></div>
         </div>
       </div>
     </div>

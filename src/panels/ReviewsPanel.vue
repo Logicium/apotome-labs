@@ -2,6 +2,8 @@
 
 import data from "../data/data.ts";
 import {ref} from "vue";
+import LeftIcon from "@/assets/icons/LeftIcon.vue";
+import RightIcon from "@/assets/icons/RightIcon.vue";
 
 const reviewIndex = ref(0);
 
@@ -37,10 +39,10 @@ const decrementReviews = () => {
             </div>
             <div class="buttons flex med">
               <div class="button" @click="decrementReviews">
-                <
+                <LeftIcon/>
               </div>
               <div class="button" @click="incrementReviews">
-                >
+                <RightIcon/>
               </div>
             </div>
           </div>

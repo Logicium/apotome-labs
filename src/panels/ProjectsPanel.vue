@@ -23,7 +23,7 @@ import ArrowIcon from "@/assets/icons/ArrowIcon.vue";
 
             <div>
               <div class="small">A full booking and rewards system built with Square payments.</div>
-              <div class="button">View Project <ArrowIcon/> </div>
+              <div class="button">VIEW PROJECT</div>
             </div>
           </div>
         </div>
@@ -37,7 +37,7 @@ import ArrowIcon from "@/assets/icons/ArrowIcon.vue";
             </div>
             <div>
               <div class="small">A full booking and rewards system built with Square payments.</div>
-              <div class="button">View Project <ArrowIcon/> </div>
+              <div class="button">VIEW PROJECT</div>
             </div>
           </div>
         </div>
@@ -52,7 +52,7 @@ import ArrowIcon from "@/assets/icons/ArrowIcon.vue";
 
             <div>
               <div class="small">A full booking and rewards system built with Square payments.</div>
-              <div class="button">View Project <ArrowIcon/> </div>
+              <div class="button">VIEW PROJECT</div>
             </div>
           </div>
         </div>
@@ -66,7 +66,7 @@ import ArrowIcon from "@/assets/icons/ArrowIcon.vue";
             </div>
             <div>
               <div class="small">A full booking and rewards system built with Square payments.</div>
-              <div class="button">View Project <ArrowIcon/> </div>
+              <div class="button">VIEW PROJECT</div>
             </div>
           </div>
         </div>

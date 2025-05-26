@@ -13,7 +13,7 @@ import Tier from "@/components/Tier.vue";
     </div>
 
     <div class="priceWrap">
-      <Tier title=" TIER 00 / " price=" $49 / MO " :data="data.pricing.tiers.tier0" style="height: 80%"/>
+<!--      <Tier title=" TIER 00 / " price=" $49 / MO " :data="data.pricing.tiers.tier0" style="height: 80%"/>-->
       <Tier title=" TIER 01 / " price=" $99 / MO " :data="data.pricing.tiers.tier1" style="height: 100%"/>
       <Tier title=" TIER 02 / " price=" $149 / MO " :data="data.pricing.tiers.tier2" style="height: 100%"/>
       <Tier title=" TIER 03 / " price=" $199 / MO " :data="data.pricing.tiers.tier3" style="height: 80%"/>
