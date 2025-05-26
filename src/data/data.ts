@@ -84,7 +84,51 @@ const data = {
   },
 
   projects:{
-    intro:"Explore our diverse range of projects, from sleek websites to powerful mobile apps."
+    intro:"Explore our diverse range of projects, from sleek websites to powerful mobile apps.",
+    list: [
+      {
+        name: "BETA STUDIO",
+        type: "TEMPLATE",
+        description: "A full booking and rewards system built with Square payments.",
+        image: "/projects/beta.png",
+        featured: true
+      },
+      {
+        name: "STORMANT DESIGNS",
+        type: "WEBSITE",
+        description: "A full booking and rewards system built with Square payments.",
+        image: "/projects/stormant.png",
+        featured: true
+      },
+      {
+        name: "FLORACIA",
+        type: "WEBSITE",
+        description: "A full booking and rewards system built with Square payments.",
+        image: "/projects/floracia.png",
+        featured: true
+      },
+      {
+        name: "MARGARET HUNT GALLERY",
+        type: "WEBSITE",
+        description: "A full booking and rewards system built with Square payments.",
+        image: "/projects/margaret.png",
+        featured: true
+      },
+      {
+        name: "TECHFLOW SOLUTIONS",
+        type: "APPLICATION",
+        description: "A custom CRM solution with integrated analytics dashboard.",
+        image: "/projects/techflow.png",
+        featured: false
+      },
+      {
+        name: "GREENLEAF ORGANICS",
+        type: "E-COMMERCE",
+        description: "An online store with subscription service and delivery tracking.",
+        image: "/projects/greenleaf.png",
+        featured: false
+      }
+    ]
   },
 
   contact:{

@@ -38,7 +38,7 @@ import PricingCardVertical from "@/components/cards/PricingCardVertical.vue";
 .pricingCards{
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  gap: 1rem;
+  gap: 2rem;
   margin-top: 2rem;
 }
 </style>
