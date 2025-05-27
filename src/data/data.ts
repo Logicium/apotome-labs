@@ -134,7 +134,11 @@ const data = {
   },
 
   contact:{
-    intro:"Ready to take your business to the next level? Contact us to schedule a free consultation."
+    intro:"Ready to take your business to the next level? Contact us to schedule a free consultation.",
+    booking:{
+      title: "Book a Consultation",
+      subtitle: "Select a date and time for your free 30 minute consultation. We'll get back to you within 24 hours to confirm your appointment."
+    }
   },
 
   about:{

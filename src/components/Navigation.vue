@@ -16,7 +16,7 @@
       <RouterLink to="/"><div>PROJECTS</div></RouterLink>
       <RouterLink to="/"><div>TESTIMONIALS</div></RouterLink>
       <RouterLink to="/"><div>PRICING</div></RouterLink>
-      <RouterLink to="/"><div>CONTACT</div></RouterLink>
+      <RouterLink to="/contact"><div>CONTACT</div></RouterLink>
     </div>
 
   </nav>

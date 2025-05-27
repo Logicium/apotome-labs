@@ -1,0 +1,496 @@
+<script setup lang="ts">
+import { ref, computed, watch } from 'vue';
+import ArrowIcon from "@/assets/icons/ArrowIcon.vue";
+import LeftIcon from "@/assets/icons/LeftIcon.vue";
+import RightIcon from "@/assets/icons/RightIcon.vue";
+import data from "@/data/data.ts";
+import BookingCard from "@/components/cards/BookingCard.vue";
+import DateCard from "@/components/cards/DateCard.vue";
+
+// Date handling
+const currentDate = ref(new Date());
+const selectedDate = ref(new Date()); // Default to today's date
+const showConfirmation = ref(false);
+const selectedTime = ref(null);
+
+// Pagination for time slots
+const currentPage = ref(0);
+const itemsPerPage = 9; // Show 9 time slots per page
+
+// Form data
+const name = ref('');
+const email = ref('');
+const projectDescription = ref('');
+
+// Function to get the start of the week (Sunday)
+const getStartOfWeek = (date) => {
+  const d = new Date(date);
+  const day = d.getDay(); // 0 for Sunday, 1 for Monday, etc.
+  d.setDate(d.getDate() - day); // Go back to the start of the week (Sunday)
+  return d;
+};
+
+// Get the current week's start date
+const weekStartDate = computed(() => {
+  return getStartOfWeek(currentDate.value);
+});
+
+// Generate an array of dates for the current week (Monday to Friday only)
+const weekDates = computed(() => {
+  const dates = [];
+  const startDate = new Date(weekStartDate.value);
+
+  // Start from Monday (1) and go to Friday (5)
+  for (let i = 1; i <= 5; i++) {
+    const date = new Date(startDate);
+    date.setDate(startDate.getDate() + i);
+    dates.push(date);
+  }
+
+  return dates;
+});
+
+// Format date for display
+const formatDate = (date) => {
+  return date.toLocaleDateString('en-US', { weekday: 'short', month: 'short', day: 'numeric' });
+};
+
+// Go to previous week
+const previousWeek = () => {
+  const newDate = new Date(currentDate.value);
+  newDate.setDate(newDate.getDate() - 7);
+  currentDate.value = newDate;
+  // Set selectedDate to the first day of the week (Monday)
+  selectedDate.value = weekDates.value[0];
+  selectedTime.value = null;
+  showConfirmation.value = false;
+  currentPage.value = 0; // Reset to first page when week changes
+};
+
+// Go to next week
+const nextWeek = () => {
+  const newDate = new Date(currentDate.value);
+  newDate.setDate(newDate.getDate() + 7);
+  currentDate.value = newDate;
+  // Set selectedDate to the first day of the week (Monday)
+  selectedDate.value = weekDates.value[0];
+  selectedTime.value = null;
+  showConfirmation.value = false;
+  currentPage.value = 0; // Reset to first page when week changes
+};
+
+// Generate time slots from 10am to 5pm in 30-minute intervals
+const generateTimeSlots = () => {
+  const slots = [];
+  // Start at 10:00 AM (10 * 60 minutes)
+  let startMinutes = 10 * 60;
+  // End at 5:00 PM (17 * 60 minutes)
+  const endMinutes = 17 * 60;
+
+  while (startMinutes < endMinutes) {
+    const hours = Math.floor(startMinutes / 60);
+    const minutes = startMinutes % 60;
+    const ampm = hours >= 12 ? 'PM' : 'AM';
+    const hour12 = hours % 12 || 12; // Convert 0 to 12 for 12-hour format
+
+    slots.push({
+      time: `${hour12}:${minutes.toString().padStart(2, '0')} ${ampm}`,
+      value: startMinutes
+    });
+
+    // Increment by 30 minutes
+    startMinutes += 30;
+  }
+
+  return slots;
+};
+
+const timeSlots = computed(() => generateTimeSlots());
+
+// Filter out past times for the current date
+const availableTimeSlots = computed(() => {
+  const now = new Date();
+  const today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+
+  // If selected date is in the past, return empty array
+  if (selectedDate.value < today) {
+    return [];
+  }
+
+  // If selected date is today, filter out past times
+  if (selectedDate.value.toDateString() === today.toDateString()) {
+    const currentHour = now.getHours();
+    const currentMinute = now.getMinutes();
+    const currentTimeInMinutes = currentHour * 60 + currentMinute;
+
+    return timeSlots.value.filter(slot => {
+      return slot.value > currentTimeInMinutes;
+    });
+  }
+
+  // If selected date is in the future, return all time slots
+  return timeSlots.value;
+});
+
+// Get the current page of time slots
+const paginatedTimeSlots = computed(() => {
+  const availableSlots = availableTimeSlots.value;
+  const startIndex = currentPage.value * itemsPerPage;
+  return availableSlots.slice(startIndex, startIndex + itemsPerPage);
+});
+
+// Go to previous page of time slots
+const previousPage = () => {
+  // If no available time slots, don't paginate
+  if (availableTimeSlots.value.length === 0) return;
+
+  if (currentPage.value > 0) {
+    currentPage.value--;
+  } else {
+    // Wrap around to the last page
+    const totalPages = Math.ceil(availableTimeSlots.value.length / itemsPerPage);
+    currentPage.value = totalPages - 1;
+  }
+};
+
+// Go to next page of time slots
+const nextPage = () => {
+  // If no available time slots, don't paginate
+  if (availableTimeSlots.value.length === 0) return;
+
+  const totalPages = Math.ceil(availableTimeSlots.value.length / itemsPerPage);
+  if (currentPage.value < totalPages - 1) {
+    currentPage.value++;
+  } else {
+    // Wrap around to the first page
+    currentPage.value = 0;
+  }
+};
+
+// Handle date selection
+const selectDate = (date) => {
+  selectedDate.value = date;
+  selectedTime.value = null;
+  showConfirmation.value = false;
+  currentPage.value = 0; // Reset to first page when a new date is selected
+};
+
+// Handle time selection
+const selectTime = (time) => {
+  selectedTime.value = time;
+  showConfirmation.value = true;
+};
+
+// Confirm booking
+const confirmBooking = () => {
+  // Here you would typically send the booking data to a server
+  // For now, we'll just reset the form
+  alert(`Booking confirmed for ${formatDate(selectedDate.value)} at ${selectedTime.value.time}\nName: ${name.value}\nEmail: ${email.value}\nProject Description: ${projectDescription.value}`);
+  selectedDate.value = null;
+  selectedTime.value = null;
+  showConfirmation.value = false;
+  name.value = '';
+  email.value = '';
+  projectDescription.value = '';
+};
+
+// Cancel booking
+const cancelBooking = () => {
+  showConfirmation.value = false;
+};
+
+// Check if a date is the selected date
+const isSelectedDate = (date) => {
+  if (!selectedDate.value) return false;
+  return date.toDateString() === selectedDate.value.toDateString();
+};
+
+// Reset current page when available time slots change
+watch(availableTimeSlots, () => {
+  currentPage.value = 0;
+});
+</script>
+
+<template>
+  <div class="panel">
+    <div>
+      <div class="big title">{{ data.contact.booking.title }}</div>
+      <div class="small subtitle">{{ data.contact.booking.subtitle }}</div>
+    </div>
+
+    <div class="bookingContainer">
+      <!-- Main Booking Layout -->
+      <div class="bookingFlexContainer">
+        <!-- Left Column: Date and Time Selection -->
+        <div class="selectionColumn">
+          <!-- Date Selection -->
+          <div class="dateSelection">
+            <div class="weekNavigation">
+              <div class="weekLabel med"> {{ formatDate(weekDates[0]) }} - {{ formatDate(weekDates[4]) }}</div>
+
+              <div class="buttons flex">
+                <div class="button navButton" @click="previousWeek">
+                  <LeftIcon />
+                </div>
+                <div class="button navButton" @click="nextWeek">
+                  <RightIcon />
+                </div>
+              </div>
+            </div>
+
+            <div class="dateGrid">
+              <DateCard
+                v-for="date in weekDates"
+                :key="date.toISOString()"
+                :date="date"
+                :is-selected="isSelectedDate(date)"
+                @select="selectDate(date)"
+              />
+            </div>
+          </div>
+
+          <!-- Time Selection -->
+          <div class="timeSelection">
+            <div class="timeNavigation">
+              <div class="med timeSelectionTitle">Available Times on {{ formatDate(selectedDate) }}</div>
+              <div class="buttons flex" v-if="availableTimeSlots.length > 0">
+                <div class="button navButton" @click="previousPage">
+                  <LeftIcon />
+                </div>
+                <div class="button navButton" @click="nextPage">
+                  <RightIcon />
+                </div>
+              </div>
+            </div>
+
+            <div v-if="availableTimeSlots.length > 0" class="timeGrid">
+              <BookingCard
+                v-for="slot in paginatedTimeSlots"
+                :key="slot.value"
+                :time="slot.time"
+                :value="slot.value"
+                :is-selected="selectedTime && selectedTime.value === slot.value"
+                @select="selectTime(slot)"
+              />
+            </div>
+            <div v-else class="gray">
+              <p>No available times for this date</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Column: Confirmation Panel -->
+        <div class="confirmationPanel">
+          <div class="confirmationContent" v-if="showConfirmation">
+            <div class="med">Confirm Your Booking</div>
+            <div class="small">Date: {{ formatDate(selectedDate) }}</div>
+            <div class="small">Time: {{ selectedTime ? selectedTime.time : '' }}</div>
+
+            <div class="formGroup">
+              <label for="name">Name</label>
+              <input
+                type="text"
+                id="name"
+                v-model="name"
+                placeholder="Your name"
+                class="formInput"
+                required
+              />
+            </div>
+
+            <div class="formGroup">
+              <label for="email">Email</label>
+              <input
+                type="email"
+                id="email"
+                v-model="email"
+                placeholder="Your email address"
+                class="formInput"
+                required
+              />
+            </div>
+
+            <div class="formGroup">
+              <label for="projectDescription">Project Description</label>
+              <textarea
+                id="projectDescription"
+                v-model="projectDescription"
+                placeholder="Brief description of your project"
+                class="formTextarea"
+                rows="3"
+              ></textarea>
+            </div>
+
+            <div class="confirmationButtons">
+              <div class="button" @click="cancelBooking">Cancel</div>
+              <div class="button cta" @click="confirmBooking">Confirm <ArrowIcon /></div>
+            </div>
+          </div>
+          <div class="emptyConfirmation" v-else>
+            <p>Select a time to book your appointment</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>
+
+<style scoped>
+.panel {
+  display: grid;
+  padding-top: 100px;
+  grid-template-rows: auto 1fr;
+}
+
+.bookingContainer {
+  margin-top: 2rem;
+  height: calc(100% - 2rem);
+}
+
+.bookingFlexContainer {
+  display: flex;
+  gap: 2rem;
+  height: 100%;
+}
+
+.selectionColumn {
+  flex: 1;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.dateSelection {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.weekNavigation {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 1rem;
+}
+
+.weekLabel {
+
+}
+
+.navButton {
+  cursor: pointer;
+  width: 45px;
+  max-width: 45px;
+  padding: 0;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dateGrid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1rem;
+}
+
+.buttons{
+  margin-left: 1rem;
+  gap: 1rem;
+}
+
+.timeSelection {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.timeSelectionTitle {
+  margin-bottom: 1rem;
+}
+
+.timeGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.timeNavigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem 0;
+  border-top: 1px solid #a8a8a8;
+}
+
+.confirmationPanel {
+  flex: 1;
+  width: 50%;
+  border: 1px solid black;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.confirmationContent {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.emptyConfirmation {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  color: #a8a8a8;
+}
+
+.confirmationButtons {
+  display: flex;
+  gap: 1rem;
+}
+
+.cta {
+  margin-left: auto;
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.formInput, .formTextarea {
+  border: 1px solid #a8a8a8;
+  padding: 0.75rem;
+  font-family: inherit;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+.formInput:focus, .formTextarea:focus {
+  outline: none;
+  border-color: black;
+}
+
+.formTextarea {
+  resize: none;
+  min-height: 80px;
+}
+
+.noTimesMessage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+  border: 1px solid #a8a8a8;
+  color: #a8a8a8;
+  font-size: 1.2rem;
+  text-align: center;
+}
+</style>

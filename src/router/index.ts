@@ -23,7 +23,7 @@ const router = createRouter({
     {
       path: '/contact',
       name: 'contact',
-      component: () => import('../views/Contact.vue')
+      component: () => import('../pages/ContactPage.vue')
     },
     {
       path: '/pricing',

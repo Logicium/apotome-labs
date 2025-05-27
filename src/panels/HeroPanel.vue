@@ -99,13 +99,14 @@ import ArrowIcon from "@/assets/icons/ArrowIcon.vue";
 .cards{
   display: flex;
   justify-content: space-between;
+  gap: 1rem;
 }
 
 .card{
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  width: 50%;
+  width: 60%;
 }
 
 .num{
