@@ -118,7 +118,7 @@ const data = {
       },
       {
         name: "TECHFLOW SOLUTIONS",
-        type: "APPLICATION",
+        type: "MOBILE APP",
         description: "A custom CRM solution with integrated analytics dashboard.",
         image: "/projects/techflow.png",
         featured: false
