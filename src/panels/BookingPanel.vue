@@ -15,12 +15,13 @@ const selectedTime = ref(null);
 
 // Pagination for time slots
 const currentPage = ref(0);
-const itemsPerPage = 9; // Show 9 time slots per page
+const itemsPerPage = 6; // Show 9 time slots per page
 
 // Form data
 const name = ref('');
 const email = ref('');
 const projectDescription = ref('');
+const meetupType = ref('virtual'); // Default to virtual meetup
 
 // Function to get the start of the week (Sunday)
 const getStartOfWeek = (date) => {
@@ -178,23 +179,26 @@ const selectDate = (date) => {
 // Handle time selection
 const selectTime = (time) => {
   selectedTime.value = time;
-  showConfirmation.value = true;
+  // No longer automatically show confirmation panel
+  // This will be triggered by the NEXT button
 };
 
 // Confirm booking
 const confirmBooking = () => {
   // Here you would typically send the booking data to a server
   // For now, we'll just reset the form
-  alert(`Booking confirmed for ${formatDate(selectedDate.value)} at ${selectedTime.value.time}\nName: ${name.value}\nEmail: ${email.value}\nProject Description: ${projectDescription.value}`);
+  const meetupTypeDisplay = meetupType.value === 'virtual' ? 'Virtual' : 'In Person';
+  alert(`Booking confirmed for ${formatDate(selectedDate.value)} at ${selectedTime.value.time}\nMeeting Type: ${meetupTypeDisplay}\nName: ${name.value}\nEmail: ${email.value}\nProject Description: ${projectDescription.value}`);
   selectedDate.value = null;
   selectedTime.value = null;
   showConfirmation.value = false;
   name.value = '';
   email.value = '';
   projectDescription.value = '';
+  meetupType.value = 'virtual'; // Reset to default
 };
 
-// Cancel booking
+// Back function (previously cancelBooking)
 const cancelBooking = () => {
   showConfirmation.value = false;
 };
@@ -276,70 +280,95 @@ watch(availableTimeSlots, () => {
             <div v-else class="gray">
               <p>No available times for this date</p>
             </div>
+
+            <!-- NEXT button to reveal confirmation panel -->
+            <div class="nextButtonContainer" v-if="selectedTime">
+              <div class="button cta nextButton" @click="showConfirmation = true">NEXT</div>
+            </div>
           </div>
+
+          <div class="confirmationPanel" v-if="showConfirmation">
+            <div class="confirmationContent">
+              <div class="med">Confirm Your Booking</div>
+              <div class="tags">
+                <div class="top">{{ ' 30 Minute Consultation '.toUpperCase() }}</div>
+                <div class="top"><span class="gray">DATE /</span> {{ formatDate(selectedDate).toUpperCase() }}&nbsp;</div>
+                <div class=""><span class="gray">TIME /</span> {{ selectedTime ? selectedTime.time : '' }}&nbsp;</div>
+              </div>
+
+              <div class="meetupTypeSelection">
+                <div class="radioGroup">
+                  <label class="radioLabel">
+                    <input type="radio" v-model="meetupType" value="virtual" class="radioInput" />
+                    <div class="radioCustom" :class="{ 'radioSelected': meetupType === 'virtual' }"></div>
+                    <span>Virtual</span>
+                  </label>
+                  <label class="radioLabel">
+                    <input type="radio" v-model="meetupType" value="inPerson" class="radioInput" />
+                    <div class="radioCustom" :class="{ 'radioSelected': meetupType === 'inPerson' }"></div>
+                    <span>In Person</span>
+                  </label>
+                </div>
+              </div>
+
+              <div class="formGroup">
+                <!--              <label for="name" class="gray">NAME</label>-->
+                <input
+                  type="text"
+                  id="name"
+                  v-model="name"
+                  placeholder="Your Name"
+                  class="formInput"
+                  required
+                />
+              </div>
+
+              <div class="formGroup">
+                <!--              <label for="email" class="gray">EMAIL</label>-->
+                <input
+                  type="email"
+                  id="email"
+                  v-model="email"
+                  placeholder="Your Email"
+                  class="formInput"
+                  required
+                />
+              </div>
+
+              <div class="formGroup top">
+                <!--              <label for="projectDescription" class="gray">PROJECT DESCRIPTION</label>-->
+                <textarea
+                  id="projectDescription"
+                  v-model="projectDescription"
+                  placeholder="Anything you want to share about your project?"
+                  class="formTextarea"
+                  rows="3"
+                ></textarea>
+              </div>
+
+              <div class="confirmationButtons">
+                <div class="button" @click="cancelBooking">BACK</div>
+                <div class="button cta" @click="confirmBooking">CONFIRM <ArrowIcon /></div>
+              </div>
+            </div>
+          </div>
+
         </div>
 
-        <!-- Right Column: Confirmation Panel -->
-        <div class="confirmationPanel">
-          <div class="confirmationContent" v-if="showConfirmation">
-            <div class="med">Confirm Your Booking</div>
-            <div class="tags">
-              <div class="tag">{{ ' 30 Minute Consultation '.toUpperCase() }}</div>
-              <div class="tag">&nbsp;{{ formatDate(selectedDate).toUpperCase() }}&nbsp;</div>
-              <div class="tag">&nbsp;{{ selectedTime ? selectedTime.time : '' }}&nbsp;</div>
-            </div>
-
-
-            <div class="formGroup">
-<!--              <label for="name" class="gray">NAME</label>-->
-              <input
-                type="text"
-                id="name"
-                v-model="name"
-                placeholder="NAME"
-                class="formInput"
-                required
-              />
-            </div>
-
-            <div class="formGroup">
-<!--              <label for="email" class="gray">EMAIL</label>-->
-              <input
-                type="email"
-                id="email"
-                v-model="email"
-                placeholder="EMAIL"
-                class="formInput"
-                required
-              />
-            </div>
-
-            <div class="formGroup">
-<!--              <label for="projectDescription" class="gray">PROJECT DESCRIPTION</label>-->
-              <textarea
-                id="projectDescription"
-                v-model="projectDescription"
-                placeholder="PROJECT DESCRIPTION"
-                class="formTextarea"
-                rows="3"
-              ></textarea>
-            </div>
-
-            <div class="confirmationButtons">
-              <div class="button" @click="cancelBooking">CANCEL</div>
-              <div class="button cta" @click="confirmBooking">CONFIRM <ArrowIcon /></div>
-            </div>
-          </div>
-          <div class="emptyConfirmation" v-else>
-            <p>Select a time to book your appointment</p>
-          </div>
+        <!-- Right Column: Image -->
+        <div class="image">
+          <!-- This div will have the background image -->
         </div>
+
+        <!-- Confirmation Panel (now absolutely positioned) -->
+
+
       </div>
     </div>
   </div>
 </template>
 
-<style scoped>
+<style scoped lang="scss">
 .panel {
   display: grid;
   padding-top: 100px;
@@ -352,17 +381,18 @@ watch(availableTimeSlots, () => {
 }
 
 .bookingFlexContainer {
-  display: flex;
-  gap: 2rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 2rem;
   height: 100%;
 }
 
 .selectionColumn {
   flex: 1;
-  width: 50%;
   display: flex;
   flex-direction: column;
   gap: 2rem;
+  position: relative; /* Added for absolute positioning of confirmationPanel */
 }
 
 .dateSelection {
@@ -378,7 +408,7 @@ watch(availableTimeSlots, () => {
 }
 
 .tags{
-  margin-bottom: 1rem;
+  margin-top: 1rem;
 }
 
 .tag{
@@ -419,7 +449,6 @@ watch(availableTimeSlots, () => {
 .timeSelection {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
 }
 
 .timeSelectionTitle {
@@ -441,14 +470,22 @@ watch(availableTimeSlots, () => {
   border-top: 1px solid #a8a8a8;
 }
 
-.confirmationPanel {
+.image {
   flex: 1;
-  width: 50%;
+  background-image: url("/agency/agency4.jpg");
+}
+
+.confirmationPanel {
+  position: absolute;
+  width: calc(100% - 4rem);
+  height: calc(100% - 4rem);
+  background-color: white;
   border: 1px solid black;
   padding: 2rem;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
+  z-index: 10;
 }
 
 .confirmationContent {
@@ -478,8 +515,6 @@ watch(availableTimeSlots, () => {
 .formGroup {
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
-  margin-bottom: 1rem;
 }
 
 .formInput, .formTextarea {
@@ -500,6 +535,20 @@ watch(availableTimeSlots, () => {
   min-height: 80px;
 }
 
+.nextButtonContainer {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 1.5rem;
+  border-top: 1px solid #a8a8a8;
+  padding-top: 1.5rem;
+}
+
+.nextButton {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
 .noTimesMessage {
   display: flex;
   justify-content: center;
@@ -509,5 +558,39 @@ watch(availableTimeSlots, () => {
   color: #a8a8a8;
   font-size: 1.2rem;
   text-align: center;
+}
+
+.meetupTypeSelection {
+  margin-top: 1rem;
+}
+
+.radioGroup {
+  display: flex;
+  gap: 2rem;
+}
+
+.radioLabel {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.radioInput {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.radioCustom {
+  width: 1rem;
+  height: 1rem;
+  border: 1px solid black;
+  margin-right: 0.5rem;
+  display: inline-block;
+}
+
+.radioSelected {
+  background-color: black;
 }
 </style>
