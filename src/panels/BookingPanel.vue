@@ -267,6 +267,7 @@ watch(availableTimeSlots, () => {
               </div>
             </div>
 
+            <transition name="fade" mode="out-in">
             <div v-if="availableTimeSlots.length > 0" class="timeGrid">
               <BookingCard
                 v-for="slot in paginatedTimeSlots"
@@ -280,12 +281,17 @@ watch(availableTimeSlots, () => {
             <div v-else class="gray">
               <p>No available times for this date</p>
             </div>
+            </transition>
 
             <!-- NEXT button to reveal confirmation panel -->
+            <transition name="fade" mode="out-in">
             <div class="nextButtonContainer" v-if="selectedTime">
               <div class="button cta nextButton" @click="showConfirmation = true">NEXT</div>
             </div>
+            </transition>
           </div>
+
+          <transition name="fade" mode="out-in">
 
           <div class="confirmationPanel" v-if="showConfirmation">
             <div class="confirmationContent">
@@ -317,7 +323,7 @@ watch(availableTimeSlots, () => {
                   type="text"
                   id="name"
                   v-model="name"
-                  placeholder="Your Name"
+                  placeholder="Name"
                   class="formInput"
                   required
                 />
@@ -329,7 +335,7 @@ watch(availableTimeSlots, () => {
                   type="email"
                   id="email"
                   v-model="email"
-                  placeholder="Your Email"
+                  placeholder="Email"
                   class="formInput"
                   required
                 />
@@ -352,8 +358,10 @@ watch(availableTimeSlots, () => {
               </div>
             </div>
           </div>
+          </transition>
 
         </div>
+
 
         <!-- Right Column: Image -->
         <div class="image">
@@ -588,9 +596,11 @@ watch(availableTimeSlots, () => {
   border: 1px solid black;
   margin-right: 0.5rem;
   display: inline-block;
+  transition: 0.5s;
 }
 
 .radioSelected {
   background-color: black;
+  transition: 0.5s;
 }
 </style>
