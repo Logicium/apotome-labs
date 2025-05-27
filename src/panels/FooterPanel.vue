@@ -14,7 +14,7 @@ import InstaIcon from "@/assets/icons/InstaIcon.vue";
       <div class="big title">Ready to Take Your Digital Brand to the Next Level?</div>
       <div class="flex">
         <div class="small subtitle">{{data.cta.intro}}</div>
-        <div class="button cta">GET STARTED <ArrowIcon/></div>
+        <RouterLink to="/contact" class="cta"><div class="button cta">GET STARTED <ArrowIcon/></div></RouterLink>
       </div>
     </div>
 
@@ -58,7 +58,7 @@ import InstaIcon from "@/assets/icons/InstaIcon.vue";
             <RouterLink to="/"><div>About</div></RouterLink>
             <RouterLink to="/"><div>Testimonials</div></RouterLink>
             <RouterLink to="/"><div>Pricing</div></RouterLink>
-            <RouterLink to="/"><div>Contact</div></RouterLink>
+            <RouterLink to="/contact"><div>Contact</div></RouterLink>
           </div>
 
           <div class="links gray">
@@ -145,6 +145,7 @@ import InstaIcon from "@/assets/icons/InstaIcon.vue";
 .cta{
   margin-left: auto;
 }
+
 .imageRow{
   margin-bottom: 2rem;
   padding-bottom: 2rem;

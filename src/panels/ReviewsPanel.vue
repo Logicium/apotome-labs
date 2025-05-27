@@ -120,7 +120,7 @@ const decrementReviews = () => {
   margin-left: auto;
   gap: 1rem;
   font-weight: 200;
-  font-size: 2rem;
+  font-size: 1.8rem;
 }
 
 .button{

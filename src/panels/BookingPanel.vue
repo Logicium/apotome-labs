@@ -230,10 +230,10 @@ watch(availableTimeSlots, () => {
 
               <div class="buttons flex">
                 <div class="button navButton" @click="previousWeek">
-                  <LeftIcon />
+                  <
                 </div>
                 <div class="button navButton" @click="nextWeek">
-                  <RightIcon />
+                  >
                 </div>
               </div>
             </div>
@@ -255,10 +255,10 @@ watch(availableTimeSlots, () => {
               <div class="med timeSelectionTitle">Available Times on {{ formatDate(selectedDate) }}</div>
               <div class="buttons flex" v-if="availableTimeSlots.length > 0">
                 <div class="button navButton" @click="previousPage">
-                  <LeftIcon />
+                  <
                 </div>
                 <div class="button navButton" @click="nextPage">
-                  <RightIcon />
+                  >
                 </div>
               </div>
             </div>
@@ -283,47 +283,51 @@ watch(availableTimeSlots, () => {
         <div class="confirmationPanel">
           <div class="confirmationContent" v-if="showConfirmation">
             <div class="med">Confirm Your Booking</div>
-            <div class="small">Date: {{ formatDate(selectedDate) }}</div>
-            <div class="small">Time: {{ selectedTime ? selectedTime.time : '' }}</div>
+            <div class="tags">
+              <div class="tag">{{ ' 30 Minute Consultation '.toUpperCase() }}</div>
+              <div class="tag">&nbsp;{{ formatDate(selectedDate).toUpperCase() }}&nbsp;</div>
+              <div class="tag">&nbsp;{{ selectedTime ? selectedTime.time : '' }}&nbsp;</div>
+            </div>
+
 
             <div class="formGroup">
-              <label for="name">Name</label>
+<!--              <label for="name" class="gray">NAME</label>-->
               <input
                 type="text"
                 id="name"
                 v-model="name"
-                placeholder="Your name"
+                placeholder="NAME"
                 class="formInput"
                 required
               />
             </div>
 
             <div class="formGroup">
-              <label for="email">Email</label>
+<!--              <label for="email" class="gray">EMAIL</label>-->
               <input
                 type="email"
                 id="email"
                 v-model="email"
-                placeholder="Your email address"
+                placeholder="EMAIL"
                 class="formInput"
                 required
               />
             </div>
 
             <div class="formGroup">
-              <label for="projectDescription">Project Description</label>
+<!--              <label for="projectDescription" class="gray">PROJECT DESCRIPTION</label>-->
               <textarea
                 id="projectDescription"
                 v-model="projectDescription"
-                placeholder="Brief description of your project"
+                placeholder="PROJECT DESCRIPTION"
                 class="formTextarea"
                 rows="3"
               ></textarea>
             </div>
 
             <div class="confirmationButtons">
-              <div class="button" @click="cancelBooking">Cancel</div>
-              <div class="button cta" @click="confirmBooking">Confirm <ArrowIcon /></div>
+              <div class="button" @click="cancelBooking">CANCEL</div>
+              <div class="button cta" @click="confirmBooking">CONFIRM <ArrowIcon /></div>
             </div>
           </div>
           <div class="emptyConfirmation" v-else>
@@ -373,8 +377,12 @@ watch(availableTimeSlots, () => {
   padding-bottom: 1rem;
 }
 
-.weekLabel {
+.tags{
+  margin-bottom: 1rem;
+}
 
+.tag{
+  background-color: black;
 }
 
 .navButton {
@@ -386,7 +394,16 @@ watch(availableTimeSlots, () => {
   display: flex;
   align-items: center;
   justify-content: center;
+  font-weight: 200;
+  font-size: 1.8rem;
+  transition: 0.5s;
 }
+
+.navButton:hover {
+  background-color: black;
+  color: white;
+}
+
 
 .dateGrid {
   display: grid;
