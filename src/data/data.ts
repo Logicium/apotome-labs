@@ -93,42 +93,66 @@ const data = {
         type: "TEMPLATE",
         description: "A modern, mobile ready template project that can be modified for your needs.",
         image: "/projects/beta.png",
-        featured: true
+        featured: true,
+        client: "Internal Project",
+        date: "January 2023",
+        url: "https://beta-ui-one.vercel.app/",
+        statement: "We went with a minimal color palette and bold typography to create a clean, modern template that puts content first while maintaining visual interest."
       },
       {
         name: "STORMANT DESIGNS",
         type: "WEBSITE",
         description: "A full booking and rewards system built with Square payments.",
         image: "/projects/stormant.png",
-        featured: true
+        featured: true,
+        client: "Zach Stormant",
+        date: "March 2023",
+        url: "https://stormant-designs.com",
+        statement: "For this design studio's website, we chose a high-contrast color scheme with dynamic typography to reflect their creative approach while ensuring the booking system remains intuitive and accessible."
       },
       {
         name: "FLORACIA",
         type: "WEBSITE",
         description: "A full booking and rewards system built with Square payments.",
         image: "/projects/floracia.png",
-        featured: true
+        featured: true,
+        client: "Floracia Inc.",
+        date: "May 2023",
+        url: "https://floracia.vercel.app/",
+        statement: "Inspired by nature, we incorporated soft, organic colors and flowing design elements to create a serene digital experience that complements Floracia's brand identity while making the booking process effortless."
       },
       {
         name: "MARGARET HUNT GALLERY",
         type: "WEBSITE",
         description: "A full booking and rewards system built with Square payments.",
         image: "/projects/margaret.png",
-        featured: true
+        featured: true,
+        client: "Margaret Hunt",
+        date: "June 2023",
+        url: "https://margarethuntgallery.com",
+        statement: "For this art gallery website, we embraced negative space and elegant typography to create a sophisticated digital canvas that showcases the artwork without distraction while providing seamless booking functionality."
       },
       {
         name: "TECHFLOW SOLUTIONS",
         type: "MOBILE APP",
         description: "A custom CRM solution with integrated analytics dashboard.",
         image: "/projects/techflow.png",
-        featured: false
+        featured: false,
+        client: "TechFlow Inc.",
+        date: "August 2023",
+        url: "https://techflow-solutions.com",
+        statement: "We designed this mobile CRM with a data-first approach, using a blue-dominant color scheme to convey trust and reliability while implementing intuitive navigation patterns that make complex analytics accessible on smaller screens."
       },
       {
         name: "GREENLEAF ORGANICS",
         type: "E-COMMERCE",
         description: "An online store with subscription service and delivery tracking.",
         image: "/projects/greenleaf.png",
-        featured: false
+        featured: false,
+        client: "Greenleaf Organics LLC",
+        date: "October 2023",
+        url: "https://greenleaf-organics.com",
+        statement: "For this organic e-commerce site, we utilized earthy greens and natural textures to evoke freshness and sustainability, while implementing a streamlined checkout process and intuitive subscription management to enhance the customer experience."
       }
     ]
   },

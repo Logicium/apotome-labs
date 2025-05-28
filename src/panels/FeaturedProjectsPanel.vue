@@ -1,10 +1,15 @@
 <script setup lang="ts">
 import data from "@/data/data.ts";
 import { ref, computed } from "vue";
+import ProjectPanel from "@/panels/ProjectPanel.vue";
 
 // State for featured project scrolling
 const featuredProjectIndex = ref(0);
 const featuredProjects = computed(() => data.projects.list.filter(project => project.featured));
+
+// State for project panel
+const showProjectPanel = ref(false);
+const selectedProject = ref(null);
 
 // Increment and decrement functions for featured projects
 const incrementFeaturedProject = () => {
@@ -13,6 +18,17 @@ const incrementFeaturedProject = () => {
 
 const decrementFeaturedProject = () => {
   featuredProjectIndex.value = (featuredProjectIndex.value - 1 + featuredProjects.value.length) % featuredProjects.value.length;
+};
+
+// Function to open project panel
+const openProjectPanel = () => {
+  selectedProject.value = featuredProjects.value[featuredProjectIndex.value];
+  showProjectPanel.value = true;
+};
+
+// Function to close project panel
+const closeProjectPanel = () => {
+  showProjectPanel.value = false;
 };
 </script>
 
@@ -24,30 +40,51 @@ const decrementFeaturedProject = () => {
     </div>
 
     <div class="featuredContainer">
-      <transition name="fade" mode="out-in">
-        <div class="featuredProject" :key="featuredProjectIndex">
-          <div class="projectImageCol image"
-               :style="{ backgroundImage: `url(${featuredProjects[featuredProjectIndex].image})` }">
-          </div>
+
+        <div class="featuredProject">
+
+          <transition name="fade" mode="out-in">
+            <div class="projectImageCol" :key="featuredProjectIndex">
+              <div class="blurredBackground" :style="{ backgroundImage: `url(${featuredProjects[featuredProjectIndex].image})` }"></div>
+              <div class="clearImageContainer">
+                <img class="clearImage" :src="featuredProjects[featuredProjectIndex].image" style="aspect-ratio: 16/9;" />
+              </div>
+            </div>
+          </transition>
+
           <div class="projectInfoCol">
-            <div class="med">{{ featuredProjects[featuredProjectIndex].name }}</div>
-            <div class="tag">&nbsp;{{ featuredProjects[featuredProjectIndex].type }}&nbsp;</div>
-            <div class="small content">{{ featuredProjects[featuredProjectIndex].description }}</div>
-            <div class="navigationRow">
-              <div class="button">VIEW PROJECT</div>
-              <div class="buttons flex">
-                <div class="button navButton" @click="decrementFeaturedProject">
-                  <
-                </div>
-                <div class="button navButton" @click="incrementFeaturedProject">
-                  >
+            <div class="projectNameAndButtons">
+              <div class="projectNameSection">
+                <div class="big">{{ featuredProjects[featuredProjectIndex].name }}</div>
+              </div>
+              <div class="buttonsSection">
+                <div class="buttons flex">
+                  <div class="button navButton" @click="decrementFeaturedProject">
+                    <
+                  </div>
+                  <div class="button navButton" @click="incrementFeaturedProject">
+                    >
+                  </div>
                 </div>
               </div>
             </div>
+            <div class="contentWrap">
+              <div class="content">{{ featuredProjects[featuredProjectIndex].statement }}</div>
+              <div class="button fit" @click="openProjectPanel">VIEW PROJECT</div>
+            </div>
+
           </div>
+
         </div>
-      </transition>
+
     </div>
+
+    <!-- Project Panel -->
+    <ProjectPanel
+      :project="selectedProject"
+      :show="showProjectPanel"
+      @close="closeProjectPanel"
+    />
   </div>
 </template>
 
@@ -62,40 +99,98 @@ const decrementFeaturedProject = () => {
   padding-top: 100px;
 }
 
+.fit{
+  width: fit-content;
+  margin-left: auto;
+}
+
 .featuredContainer {
   margin-top: 2rem;
 }
 
 .featuredProject {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto;
   grid-gap: 2rem;
-  height: 500px;
+  height: auto;
 }
 
+/* This ensures the image container maintains a 16:9 aspect ratio */
 .projectImageCol {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  height: 300px;
+  background-color: #f0f0f0; /* Light background color while image loads */
+}
+
+.blurredBackground {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   background-position: center;
   background-size: cover;
+  filter: blur(20px);
+  transform: scale(1.1); /* Prevent blur edges from showing */
+}
+
+.clearImageContainer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.clearImage {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  object-position: center;
 }
 
 .projectInfoCol {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: 2rem;
-  border: 1px solid black;
+}
+
+.projectNameAndButtons {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  margin-bottom: 1rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid black;
+}
+
+.projectNameSection {
+  width: 100%;
+}
+
+.buttonsSection {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 1rem;
+}
+
+.contentWrap {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: space-between;
+  margin-left: auto;
 }
 
 .content {
-  margin: 2rem 0;
-}
-
-.navigationRow {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding-top: 1rem;
-  border-top: 1px solid black;
+  width: 50%;
 }
 
 .buttons {

@@ -1,5 +1,10 @@
 <script setup lang="ts">
 const props = defineProps(['name', 'type', 'description', 'image', 'featured']);
+const emit = defineEmits(['click']);
+
+const handleClick = () => {
+  emit('click');
+};
 </script>
 
 <template>
@@ -11,7 +16,7 @@ const props = defineProps(['name', 'type', 'description', 'image', 'featured']);
       </div>
       <div class="projectDescription">
         <div class="small">{{ description }}</div>
-        <div class="button">VIEW PROJECT</div>
+        <div class="button" @click="handleClick">VIEW PROJECT</div>
       </div>
     </div>
     <div class="projectImage image" :style="{ backgroundImage: `url(${image})` }"></div>

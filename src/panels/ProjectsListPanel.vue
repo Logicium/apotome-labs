@@ -2,10 +2,15 @@
 import data from "@/data/data.ts";
 import { ref, computed } from "vue";
 import ProjectListCard from "@/components/cards/ProjectListCard.vue";
+import ProjectPanel from "@/panels/ProjectPanel.vue";
 
 // Search and filter functionality
 const searchQuery = ref('');
 const selectedTypes = ref<string[]>([]);
+
+// State for project panel
+const showProjectPanel = ref(false);
+const selectedProject = ref(null);
 
 // Toggle project type filter
 const toggleProjectType = (type: string) => {
@@ -40,6 +45,17 @@ const filteredProjects = computed(() => {
     return matchesSearch && matchesType;
   });
 });
+
+// Function to open project panel
+const openProjectPanel = (project) => {
+  selectedProject.value = project;
+  showProjectPanel.value = true;
+};
+
+// Function to close project panel
+const closeProjectPanel = () => {
+  showProjectPanel.value = false;
+};
 </script>
 
 <template>
@@ -61,7 +77,6 @@ const filteredProjects = computed(() => {
       </div>
 
       <div class="filterContainer">
-        <div class="filterLabel">Filter by type:</div>
         <div class="checkboxGroup">
           <label class="checkboxLabel" v-for="type in projectTypes" :key="type">
             <input
@@ -91,8 +106,16 @@ const filteredProjects = computed(() => {
         :description="project.description"
         :image="project.image"
         :featured="project.featured"
+        @click="openProjectPanel(project)"
       />
     </div>
+
+    <!-- Project Panel -->
+    <ProjectPanel
+      :project="selectedProject"
+      :show="showProjectPanel"
+      @close="closeProjectPanel"
+    />
   </div>
 </template>
 
@@ -116,12 +139,15 @@ const filteredProjects = computed(() => {
 }
 
 .searchContainer {
-  width: 100%;
+  width: calc(100% - 2rem);
 }
 
 .searchInput {
+  height: 45px;
+  max-height: 45px;
   width: 100%;
-  padding: 0.75rem;
+  margin: 0;
+  padding:0 1rem;
   border: 1px solid #a8a8a8;
   font-family: inherit;
   font-size: 1rem;
