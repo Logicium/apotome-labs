@@ -12,7 +12,7 @@ import ArrowIcon from "@/assets/icons/ArrowIcon.vue";
       <div class="infoRow">
         <div class="subtitle small">{{data.about2}}</div>
         <div class="buttons">
-          <div class="button">VIEW PROJECTS</div>
+          <RouterLink to="/projects"><div class="button">VIEW PROJECTS</div></RouterLink>
           <RouterLink to="/contact"><div class="button cta">GET STARTED <ArrowIcon/></div></RouterLink>
         </div>
       </div>
