@@ -1,12 +1,16 @@
 <script setup lang="ts">
-
 import data from "@/data/data.ts";
 import Tier from "@/components/Tier.vue";
+import SEO from "@/components/SEO.vue";
 </script>
 
 <template>
   <div class="wrap">
-
+    <SEO
+      title="Pricing & Packages | Web Development Services | Apotome Labs"
+      description="Explore our affordable web development, app design, and digital marketing packages. Apotome Labs offers transparent pricing for businesses in Trinidad, CO and beyond."
+      keywords="web development pricing, app design packages, affordable website design Trinidad CO, web services cost, digital marketing packages southern Colorado"
+    />
     <div class="titleWrap">
       <div class="title">PRICING</div>
       <div class="subtitle">{{data.pricing.intro}}</div>

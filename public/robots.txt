@@ -1,0 +1,7 @@
+# robots.txt for Apotome Labs
+
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://apotomelabs.com/sitemap.xml

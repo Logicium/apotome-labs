@@ -3,12 +3,13 @@ import { RouterView } from 'vue-router'
 
 import Navbar from "@/components/NavBar.vue";
 import Navigation from "@/components/Navigation.vue";
+import SchemaMarkup from "@/components/SchemaMarkup.vue";
 
 </script>
 
 <template>
-
   <div class="webapp">
+    <SchemaMarkup />
     <Navigation/>
     <div class="row">
       <RouterView v-slot="{ Component, route }" appear>
@@ -20,7 +21,6 @@ import Navigation from "@/components/Navigation.vue";
       </RouterView>
     </div>
   </div>
-
 </template>
 
 <style scoped>
