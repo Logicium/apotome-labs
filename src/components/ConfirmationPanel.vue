@@ -82,6 +82,8 @@ const confirmBooking = async () => {
       projectDescription: projectDescription.value || '' // Ensure it's never undefined
     };
 
+    console.log(bookingData);
+
     // Send data to server - use relative URL for better portability
     const response = await fetch((import.meta.env.VITE_API_URL || 'http://localhost:3000')+'/api/meetings', {
       method: 'POST',
