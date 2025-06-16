@@ -6,7 +6,7 @@ import RightIcon from "@/assets/icons/RightIcon.vue";
 import data from "@/data/data.ts";
 import BookingCard from "@/components/cards/BookingCard.vue";
 import DateCard from "@/components/cards/DateCard.vue";
-import ConfirmationPanel from "@/components/ConfirmationPanel.vue";
+import ConfirmationPanel from "@/panels/ConfirmationPanel.vue";
 
 // Date handling
 const currentDate = ref(new Date());
