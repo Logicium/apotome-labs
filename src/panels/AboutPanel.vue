@@ -5,9 +5,17 @@ import data from "../data/data.ts";
 
 <template>
   <div class="panel">
-    <div class="big title">{{data.about.intro}}</div>
-    <div class="small story">{{data.about.story}}</div>
-    <div class="aboutImg image"></div>
+    <div class="aboutRow">
+      <div class="big title">{{data.about.intro}}</div>
+      <div class="infoRow">
+        <div class="small aboutInfo">{{data.about.story}}</div>
+        <div class="tag"> ABOUT OUR MISSION </div>
+      </div>
+
+    </div>
+    <div class="image img1"></div>
+    <div class="image img2"></div>
+    <div class="image img3"></div>
   </div>
 </template>
 
@@ -16,22 +24,47 @@ import data from "../data/data.ts";
 .panel{
   padding-top: 100px;
   display: grid;
-  grid-template-columns: 1fr 50%;
+  grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: auto 50%;
-  grid-gap: 8rem;
+  grid-gap: 2rem;
+}
+
+.tag{
+  margin-top: 0;
 }
 
 .title{
   width: 70%;
-  grid-column: span 2;
+}
+
+.aboutInfo{
+  width: 50%;
+}
+
+.infoRow{
+  display: flex;
+  justify-content: space-between;
+
+}
+
+.aboutRow{
+  grid-column: span 3;
 }
 
 .story{
   margin-top: auto;
 }
 
-.aboutImg{
-  background-image: url("/agency/agency5.jpg");
+.img1{
+  background-image: url("/agency/agency6.jpg");
+}
+
+.img2{
+  background-image: url("/agency/agency8.jpg");
+}
+
+.img3{
+  background-image: url("/agency/agency7.jpg");
 }
 
 </style>

@@ -175,8 +175,14 @@ const data = {
   },
 
   about:{
-    intro:"Learn about our mission to empower businesses through innovative technology.",
+    intro:"Discover our mission to bring cutting edge digital solutions to rural communities.",
     story:  "Apotome Labs was founded in Trinidad, Colorado, with a clear mission: to provide rural communities with the exceptional digital presence they deserve. We specialize in creating modern, beautiful, and highly functional websites and applications that help local businesses thrive. We are dedicated to empowering our clients through education, offering insights into the latest technologies, and providing the tools to help their brands grow and connect with a wider audience."
+  },
+
+  founder:{
+    intro:"My mission is to bridge the digital divide, empowering rural businesses with the same cutting-edge tools and expertise as their urban counterparts.",
+    story:"I'm Kisora Thomas, a software engineer with a passion for helping businesses succeed. As a software engineer with a background in computer science and machine learning, I founded Apotome Labs to bring top-tier web and mobile app development to communities like my own in Trinidad, Colorado. I am committed to understanding your unique needs and providing the education and support necessary to help your brand grow and thrive in today's digital world.",
+    outro:"I believe that every business, regardless of its size or location, deserves a digital presence that they can be proud of. Let's work together to build something amazing and show the world what our local businesses are capable of."
   },
 
   cta:{
