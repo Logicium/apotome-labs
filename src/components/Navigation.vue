@@ -12,7 +12,7 @@
       </div>
     </RouterLink>
     <div class="links">
-      <RouterLink to="/"><div>ABOUT</div></RouterLink>
+      <RouterLink to="/about"><div>ABOUT</div></RouterLink>
       <RouterLink to="/projects"><div>PROJECTS</div></RouterLink>
       <RouterLink to="/"><div>TESTIMONIALS</div></RouterLink>
       <RouterLink to="/"><div>PRICING</div></RouterLink>

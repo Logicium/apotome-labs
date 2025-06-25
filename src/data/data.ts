@@ -175,7 +175,8 @@ const data = {
   },
 
   about:{
-    intro:"Learn about our mission to empower businesses through innovative technology."
+    intro:"Learn about our mission to empower businesses through innovative technology.",
+    story:  "Apotome Labs was founded in Trinidad, Colorado, with a clear mission: to provide rural communities with the exceptional digital presence they deserve. We specialize in creating modern, beautiful, and highly functional websites and applications that help local businesses thrive. We are dedicated to empowering our clients through education, offering insights into the latest technologies, and providing the tools to help their brands grow and connect with a wider audience."
   },
 
   cta:{
