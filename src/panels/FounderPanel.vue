@@ -27,7 +27,7 @@ import data from "../data/data.ts";
 
 .title{
   margin-bottom: 0;
-  width: 70%;
+
   grid-column: span 3;
 }
 
