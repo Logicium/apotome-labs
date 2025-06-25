@@ -11,7 +11,7 @@ import data from "../data/data.ts";
       <div>{{data.founder.story}}</div>
       <div>{{data.founder.outro}}</div>
     </div>
-    <div class="med substory">{{data.founder.intro}}</div>
+    <div class="small substory">{{data.founder.intro}}</div>
     <div class="aboutImg image"></div>
   </div>
 </template>
