@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import FooterPanel from "@/panels/FooterPanel.vue";
 import SEO from "@/components/SEO.vue";
-import PricingPanel from "@/panels/PricingPanel.vue";
 import MaintenancePanel from "@/panels/MaintenancePanel.vue";
+import PricingFullPanel from "@/panels/PricingFullPanel.vue";
 </script>
 
 <template>
@@ -12,7 +12,7 @@ import MaintenancePanel from "@/panels/MaintenancePanel.vue";
       description="Explore our affordable web development, app design, and digital marketing packages. Apotome Labs offers transparent pricing for businesses in Trinidad, CO and beyond."
       keywords="web development pricing, app design packages, affordable website design Trinidad CO, web services cost, digital marketing packages southern Colorado"
     />
-    <PricingPanel />
+    <PricingFullPanel />
     <MaintenancePanel />
     <FooterPanel/>
   </div>
