@@ -207,6 +207,24 @@ const data = {
           "Basic Database Management",
           "Mobile Responsive Design",
           "Content Creation and Management",
+        ],
+        featuresFull: [
+          {
+            name: "Custom Website Design and Development",
+            desc: "A professionally designed website tailored to your brand identity and business needs."
+          },
+          {
+            name: "Basic Database Management",
+            desc: "Simple database setup to store and manage essential business data."
+          },
+          {
+            name: "Mobile Responsive Design",
+            desc: "Website that adapts seamlessly to all screen sizes and devices."
+          },
+          {
+            name: "Content Creation and Management",
+            desc: "Professional content writing and a user-friendly content management system."
+          }
         ]
       },
       tier2:{
@@ -220,6 +238,28 @@ const data = {
           "E-commerce Functionality",
           "Advanced Database Management",
           "Third Party Integrations",
+        ],
+        featuresFull: [
+          {
+            name: "Everything in Startup Package",
+            desc: "All features from the Startup Package, providing a solid foundation for your digital presence."
+          },
+          {
+            name: "Mobile App Development",
+            desc: "Custom mobile application development for iOS and Android platforms."
+          },
+          {
+            name: "E-commerce Functionality",
+            desc: "Full-featured online store with secure payment processing and inventory management."
+          },
+          {
+            name: "Advanced Database Management",
+            desc: "Complex database architecture with optimized queries and data relationships."
+          },
+          {
+            name: "Third Party Integrations",
+            desc: "Seamless integration with external services and APIs to extend functionality."
+          }
         ]
       },
       tier3:{
@@ -233,6 +273,28 @@ const data = {
           "Social Media Management",
           "Business Automation Services",
           "Predictive Analytics",
+        ],
+        featuresFull: [
+          {
+            name: "Everything in Growth Package",
+            desc: "All features from the Growth Package, providing a comprehensive digital solution."
+          },
+          {
+            name: "Premium AI Features",
+            desc: "Advanced artificial intelligence solutions including chatbots, recommendation engines, and data analysis."
+          },
+          {
+            name: "Social Media Management",
+            desc: "Comprehensive social media strategy, content creation, and engagement management."
+          },
+          {
+            name: "Business Automation Services",
+            desc: "Custom workflow automation to streamline business processes and increase efficiency."
+          },
+          {
+            name: "Predictive Analytics",
+            desc: "Advanced data analysis to forecast trends and provide actionable business insights."
+          }
         ]
       },
     },

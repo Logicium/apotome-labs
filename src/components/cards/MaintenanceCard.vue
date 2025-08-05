@@ -31,6 +31,11 @@ const handleSelect = () => {
   grid-column: 1;
 }
 
+.tag.button{
+  transition: 0.5s;
+  opacity: 1;
+}
+
 .maintenanceCard.active {
   background-color: black;
   color: white;

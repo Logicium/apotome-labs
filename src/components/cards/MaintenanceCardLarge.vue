@@ -9,7 +9,7 @@ const props = defineProps({
 
 <template>
   <div class="maintenanceCardLarge">
-    <div class="med">What's Included</div>
+    <div class="med">What's Included:</div>
     <transition name="fade" mode="out-in" :key="selectedPackage.name">
       <div v-if="selectedPackage" class="packageDetails">
         <div class="packageName">{{ selectedPackage.name }}</div>
