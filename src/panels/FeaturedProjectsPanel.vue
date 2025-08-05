@@ -110,9 +110,9 @@ const closeProjectPanel = () => {
 
 .featuredProject {
   display: grid;
-  grid-template-rows: auto auto;
+  grid-template-columns: 1fr 1fr;
   grid-gap: 2rem;
-  height: auto;
+  height: 100%;
 }
 
 /* This ensures the image container maintains a 16:9 aspect ratio */
@@ -120,7 +120,7 @@ const closeProjectPanel = () => {
   position: relative;
   width: 100%;
   overflow: hidden;
-  height: 300px;
+
   background-color: #f0f0f0; /* Light background color while image loads */
 }
 

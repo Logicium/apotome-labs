@@ -121,14 +121,11 @@ const closeProjectPanel = () => {
 
 <style scoped lang="scss">
 .panel {
+  padding-top: 100px;
   display: grid;
   grid-template-rows: auto auto 1fr;
   padding-bottom: 4rem;
   height: auto;
-}
-
-.projectsListPanel {
-  padding-top: 2rem;
 }
 
 .searchFilterContainer {
