@@ -235,18 +235,53 @@ const data = {
           "Predictive Analytics",
         ]
       },
-      // tier0:{
-      //   name:"00 Maintenance",
-      //   price: "$60",
-      //   duration: "/month",
-      //   desc: "Essential maintenance package for existing websites, providing regular updates and reliable technical support to keep your site secure and running smoothly.",
-      //   features: [
-      //     "Website Maintenance and Updates",
-      //     "Security Patches and Updates",
-      //     "Domain Management",
-      //     "Technical Support",
-      //   ]
-      // },
+    },
+    maintenance: {
+      intro: "Our maintenance plans start at $20, to keep your site secure and with the latest updates.",
+      packages: {
+        standard: {
+          id: "01",
+          name: "Standard Maintenance",
+          price: "$20",
+          duration: "/Month",
+          desc: "Essential maintenance package for existing websites, providing regular updates and reliable technical support to keep your site secure and running smoothly.",
+          features: [
+            "Website Maintenance and Updates",
+            "Security Patches and Updates",
+            "Domain Management",
+            "Basic Technical Support",
+          ]
+        },
+        full: {
+          id: "02",
+          name: "Full Support Maintenance",
+          price: "$50",
+          duration: "/Month",
+          desc: "Comprehensive maintenance package with priority support and regular content updates to keep your website fresh and engaging.",
+          features: [
+            "Everything in Standard Package",
+            "Priority Technical Support",
+            "Regular Content Updates",
+            "Performance Optimization",
+            "Monthly Analytics Reports",
+          ]
+        },
+        enterprise: {
+          id: "03",
+          name: "Enterprise Maintenance",
+          price: "$200",
+          duration: "/Month",
+          desc: "Premium maintenance package for enterprise websites with dedicated support, advanced security, and continuous improvements.",
+          features: [
+            "Everything in Full Support Package",
+            "Dedicated Support Team",
+            "Advanced Security Monitoring",
+            "Continuous Improvements",
+            "Custom Feature Development",
+            "Weekly Analytics Reports",
+          ]
+        }
+      }
     },
 
   },

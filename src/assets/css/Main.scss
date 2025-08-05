@@ -53,6 +53,14 @@ a{
   white-space: break-spaces;
 }
 
+.tag.button{
+  background-color: black;
+  cursor: pointer;
+  width: fit-content;
+  padding: 0;
+  height: fit-content;
+}
+
 .gray{
   color: #a8a8a8;
 }
