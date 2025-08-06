@@ -23,7 +23,7 @@ const selectPackage = (pkg) => {
 <template>
   <div class="panel">
     <div>
-      <div class="big title">Maintenance Packages</div>
+      <div class="big title">Our Maintenance Packages</div>
       <div class="small subtitle">{{ data.pricing.maintenance.intro }}</div>
     </div>
     <div class="maintenanceGrid">

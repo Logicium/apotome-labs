@@ -3,6 +3,7 @@ import FooterPanel from "@/panels/FooterPanel.vue";
 import SEO from "@/components/SEO.vue";
 import MaintenancePanel from "@/panels/MaintenancePanel.vue";
 import PricingFullPanel from "@/panels/PricingFullPanel.vue";
+import ValuePanel from "@/panels/ValuePanel.vue";
 </script>
 
 <template>
@@ -14,6 +15,7 @@ import PricingFullPanel from "@/panels/PricingFullPanel.vue";
     />
     <PricingFullPanel />
     <MaintenancePanel />
+    <ValuePanel/>
     <FooterPanel/>
   </div>
 </template>

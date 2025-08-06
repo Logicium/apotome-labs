@@ -154,7 +154,7 @@ import InstaIcon from "@/assets/icons/InstaIcon.vue";
 .image{
   height: 100%;
   background-image: url("/public/mountain/fishers-peak.jpg");
-  filter: grayscale(1);
+  //filter: grayscale(1);
   display: flex;
   flex-direction: column;
   color: white;

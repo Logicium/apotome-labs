@@ -61,7 +61,7 @@ const closeProjectPanel = () => {
 <template>
   <div class="panel projectsListPanel">
     <div>
-      <div class="big title">All Projects</div>
+      <div class="big title">View All Projects</div>
       <div class="small subtitle">Browse our complete portfolio of work.</div>
     </div>
 
