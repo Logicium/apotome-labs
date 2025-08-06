@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { defineProps, defineEmits, computed } from 'vue';
+import DoubleImage from '../components/DoubleImage.vue';
 
 const props = defineProps({
   project: {
@@ -72,10 +73,7 @@ const aspectRatio = computed(() => {
         </div>
 
         <div class="projectImageCol">
-          <div class="blurredBackground" :style="{ backgroundImage: `url(${project.image})` }"></div>
-          <div class="clearImageContainer" :class="{ 'mobile': isMobileProject }">
-            <img class="clearImage" :src="project.image" :style="{ aspectRatio: aspectRatio }" />
-          </div>
+          <DoubleImage :image="project.image" :aspect-ratio="aspectRatio" :is-mobile="isMobileProject" />
         </div>
       </div>
     </div>
@@ -163,47 +161,5 @@ margin-top: 0;
   overflow: hidden;
 }
 
-.blurredBackground {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-position: center;
-  background-size: cover;
-  filter: blur(20px);
-  transform: scale(1.1); /* Prevent blur edges from showing */
-}
-
-.clearImageContainer {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 1;
-  overflow: hidden;
-}
-
-.clearImage {
-  max-height: 100%;
-  max-width: 100%;
-  object-fit: contain;
-  object-position: center;
-}
-
-/* For standard projects (16:9 aspect ratio) */
-.clearImageContainer:not(.mobile) .clearImage {
-  width: 100%; /* Make image flush with left and right sides */
-  height: auto;
-}
-
-/* For mobile projects (9:16 aspect ratio) */
-.clearImageContainer.mobile .clearImage {
-  height: 100%; /* Make image flush with top and bottom sides */
-  width: auto;
-}
+/* These styles have been moved to the DoubleImage component */
 </style>
