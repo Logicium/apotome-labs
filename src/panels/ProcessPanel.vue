@@ -213,15 +213,17 @@ const goToStage = (index) => {
 .stageNavigation {
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  gap: 1rem;
   flex: 1;
 }
 
 .navItem {
+  background-color: #e0e0e0;
+  color: black;
   display: flex;
   align-items: center;
   gap: 1rem;
-  padding: 1rem 0;
+  padding: 1rem;
   cursor: pointer;
   transition: all 0.3s ease;
   &:hover {
@@ -229,7 +231,8 @@ const goToStage = (index) => {
   }
 
   &.active {
-    color: black;
+    color: white;
+    background-color: black;
     font-weight: 500;
   }
 }
