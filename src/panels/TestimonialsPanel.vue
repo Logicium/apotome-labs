@@ -6,20 +6,20 @@ import { ref } from 'vue';
 // Sample testimonial data
 const testimonials = [
   {
-    title: "STARTING POINT",
-    desc: "We were looking for a partner who could help us transform our digital presence and create a more engaging user experience for our customers."
+    title: "CLIENT",
+    desc: "Zach Stormant, 28, Founder of Stormant Designs, LLC."
   },
   {
-    title: "VISION",
-    desc: "Our goal was to create a modern, responsive website that would showcase our products and services in the best possible way."
+    title: "STARTING POINT",
+    desc: "\"We were looking for a partner who could help us transform our digital presence and create a more engaging user experience for our customers.\""
   },
   {
     title: "IMPACT",
-    desc: "The new website has significantly improved our online presence, resulting in a 40% increase in user engagement and a 25% increase in conversion rates."
+    desc: "\"The new website has significantly improved our online presence, resulting in a 40% increase in user engagement and a 25% increase in conversion rates.\""
   },
   {
     title: "TESTIMONY",
-    desc: "Working with Apotome Labs was a great experience. Their team was professional, responsive, and delivered exactly what we needed on time and within budget."
+    desc: "\"Working with Apotome Labs was a great experience. Their team was professional, responsive, and delivered exactly what we needed on time and within budget.\""
   }
 ];
 
@@ -46,19 +46,35 @@ const handleToggle = (testimonialTitle) => {
     </div>
     <div class="grid">
       <div class="content">
-        <TestimonialCard
-          v-for="testimonial in testimonials"
-          :key="testimonial.title"
-          :title="testimonial.title"
-          :desc="testimonial.desc"
-          :is-active="activeTestimonialTitle === testimonial.title"
-          @toggle="handleToggle"
-        />
+
+        <div v-for="item in testimonials" class="testimonyCard">
+          <div class="med top">{{item.title}}</div>
+          <div class="small">{{item.desc}}</div>
+        </div>
+
+<!--        <TestimonialCard-->
+<!--          v-for="testimonial in testimonials"-->
+<!--          :key="testimonial.title"-->
+<!--          :title="testimonial.title"-->
+<!--          :desc="testimonial.desc"-->
+<!--          :is-active="activeTestimonialTitle === testimonial.title"-->
+<!--          @toggle="handleToggle"-->
+<!--        />-->
+
+
       </div>
       <div class="imgBig">
         <DoubleImage image="/public/projects/stormant.png" />
       </div>
       <div class="image imgSmall1"/>
+      <div class="buttons flex">
+        <div class="button" @click="decrementReviews">
+          <
+        </div>
+        <div class="button" @click="incrementReviews">
+          >
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -75,18 +91,27 @@ const handleToggle = (testimonialTitle) => {
   padding-top: 2rem;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 50% 50%;
+  grid-template-rows: 1fr 1fr;
   grid-gap: 2rem;
 }
 
 .testimonyCard{
-  padding: 1rem 0;
+  padding-bottom: 1rem;
   border-bottom: 1px solid black;
+}
+
+.top{
+  margin-bottom: 1rem;
 }
 
 .content{
   grid-row: 2;
   grid-column: 1/3;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-auto-rows: auto;
+  grid-gap: 1rem;
+  height: fit-content;
 }
 
 .image {
@@ -115,6 +140,25 @@ const handleToggle = (testimonialTitle) => {
   grid-column: 1 / 3;
   position: relative;
   height: 100%;
+}
+
+.buttons{
+  gap: 1rem;
+  font-weight: 200;
+  font-size: 1.8rem;
+}
+
+.button{
+  cursor: pointer;
+  width: 45px;
+  padding: 0;
+  transition: 0.5s;
+}
+
+.button:hover{
+  background-color: black;
+  color: white;
+  transition: 0.5s;
 }
 
 </style>
