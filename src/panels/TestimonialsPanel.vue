@@ -1,27 +1,23 @@
 <script setup lang="ts">
 import DoubleImage from '../components/DoubleImage.vue';
 import TestimonialCard from '@/components/cards/TestimonialCard.vue';
-import { ref } from 'vue';
+import {computed, ref} from 'vue';
+import data from "@/data/data.ts";
 
-// Sample testimonial data
-const testimonials = [
-  {
-    title: "CLIENT",
-    desc: "Zach Stormant, 28, Founder of Stormant Designs, LLC."
-  },
-  {
-    title: "STARTING POINT",
-    desc: "\"We were looking for a partner who could help us transform our digital presence and create a more engaging user experience for our customers.\""
-  },
-  {
-    title: "IMPACT",
-    desc: "\"The new website has significantly improved our online presence, resulting in a 40% increase in user engagement and a 25% increase in conversion rates.\""
-  },
-  {
-    title: "TESTIMONY",
-    desc: "\"Working with Apotome Labs was a great experience. Their team was professional, responsive, and delivered exactly what we needed on time and within budget.\""
-  }
-];
+const testimonialIndex = ref(0);
+
+const testimonialData = ref(data.testimonials.list);
+
+const clientImageUrl = computed(()=> testimonialData.value[testimonialIndex.value].clientImage);
+const projectImageUrl = computed(()=> testimonialData.value[testimonialIndex.value].projectImage);
+
+const incrementTestimonials = () => {
+  testimonialIndex.value = (testimonialIndex.value + 1) % data.testimonials.list.length;
+}
+
+const decrementTestimonials = () => {
+  testimonialIndex.value = (testimonialIndex.value - 1 + data.testimonials.list.length) % data.testimonials.list.length;
+}
 
 // Track which testimonial card is currently active
 const activeTestimonialTitle = ref(null);
@@ -42,36 +38,45 @@ const handleToggle = (testimonialTitle) => {
   <div class="panel">
     <div>
       <div class="big title">Hear From Our Clients</div>
-      <div class="small subtitle">We are happy to share the reviews from our clients.</div>
+      <div class="small subtitle">{{data.testimonials.intro}}</div>
     </div>
     <div class="grid">
-      <div class="content">
 
-        <div v-for="item in testimonials" class="testimonyCard">
-          <div class="med top">{{item.title}}</div>
-          <div class="small">{{item.desc}}</div>
+      <transition name="fade">
+      <div class="content" :key="testimonialIndex">
+        <div class="testimonyCard">
+          <div class="med top">CLIENT</div>
+          <div class="small">{{testimonialData[testimonialIndex].client}}</div>
         </div>
 
-<!--        <TestimonialCard-->
-<!--          v-for="testimonial in testimonials"-->
-<!--          :key="testimonial.title"-->
-<!--          :title="testimonial.title"-->
-<!--          :desc="testimonial.desc"-->
-<!--          :is-active="activeTestimonialTitle === testimonial.title"-->
-<!--          @toggle="handleToggle"-->
-<!--        />-->
+        <div class="testimonyCard">
+          <div class="med top">IMPACT</div>
+          <div class="small">"{{testimonialData[testimonialIndex].impact}}"</div>
+        </div>
 
+        <div class="testimonyCard">
+          <div class="med top">STARTING POINT</div>
+          <div class="small">"{{testimonialData[testimonialIndex].startingPoint}}"</div>
+        </div>
 
+        <div class="testimonyCard">
+          <div class="med top">TESTIMONY</div>
+          <div class="small">"{{testimonialData[testimonialIndex].testimony}}"</div>
+        </div>
       </div>
+      </transition>
       <div class="imgBig">
-        <DoubleImage image="/public/projects/stormant.png" />
+          <DoubleImage :key="testimonialIndex" :image="projectImageUrl" />
       </div>
-      <div class="image imgSmall1"/>
+      <transition name="fade">
+        <div class="image imgSmall1" :key="testimonialIndex" :style="{backgroundImage: `url(${clientImageUrl})`}"/>
+      </transition>
+
       <div class="buttons flex">
-        <div class="button" @click="decrementReviews">
+        <div class="button" @click="decrementTestimonials">
           <
         </div>
-        <div class="button" @click="incrementReviews">
+        <div class="button" @click="incrementTestimonials">
           >
         </div>
       </div>
@@ -120,11 +125,20 @@ const handleToggle = (testimonialTitle) => {
 }
 
 .imgSmall1{
-  background-image: url('/public/clients/zach.jpg');
-  filter: grayscale(100%);
-  background-position: 50% 30%;
   grid-row: 1;
   grid-column: 3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  filter: grayscale(100%);
+}
+
+.clientImg {
+  max-height: 100%;
+  max-width: 100%;
+  object-fit: cover;
+  filter: grayscale(100%);
 }
 .imgSmall2{
   background-image: url('/public/projects/stormant2.png');
@@ -137,7 +151,7 @@ const handleToggle = (testimonialTitle) => {
 
 .imgBig{
   grid-row: 1 / 2;
-  grid-column: 1 / 3;
+  grid-column: 1/3;
   position: relative;
   height: 100%;
 }
@@ -159,6 +173,17 @@ const handleToggle = (testimonialTitle) => {
   background-color: black;
   color: white;
   transition: 0.5s;
+}
+
+/* Fade transition */
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.5s ease;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
 }
 
 </style>

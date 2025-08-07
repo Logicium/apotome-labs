@@ -57,6 +57,39 @@ const data = {
     ]
   },
 
+  testimonials:{
+    intro:"Hear from our clients about their experience working with us and the impact our services have had on their businesses.",
+    list:[
+      {
+        client: "Zach Stormant, 28, Founder of Stormant Designs, LLC.",
+        startingPoint: "We were looking for a partner who could help us transform our digital presence and create a more engaging user experience for our customers.",
+        impact: "The new website has significantly improved our online presence, resulting in a 40% increase in user engagement and a 25% increase in conversion rates.",
+        testimony: "Working with Apotome Labs was a great experience. Their team was professional, responsive, and delivered exactly what we needed on time and within budget.",
+        clientImage:"/clients/zach.jpg",
+        projectImage:"/projects/stormant.png",
+        alt: "Zach Stormant, Founder of Stormant Designs, LLC."
+      },
+      {
+        client: "Tom Murphy, 38, Owner of Eternal Float Spa & Wellness Center",
+        startingPoint: "Our old website wasn't mobile-friendly and didn't reflect the quality of our services.",
+        impact: "Since launching our new website, we've seen a 60% increase in online bookings and a significant reduction in phone calls for basic information.",
+        testimony: "Apotome Labs understood our vision perfectly. They created a website that not only looks beautiful but also functions seamlessly for our customers.",
+        clientImage:"/clients/tom.jpg",
+        projectImage:"/projects/spa.png",
+        alt: "Tom Murphy, Owner of Eternal Float Spa & Wellness Center"
+      },
+      {
+        client: "Margaret Hunt, 42, Owner of Margaret Hunt Gallery",
+        startingPoint: "As an art gallery, we needed a website that would showcase our artwork in the best possible light.",
+        impact: "Our online sales have increased by 75% since launching the new website, and we've attracted clients from across the country.",
+        testimony: "The team at Apotome Labs are true artists themselves. They created a digital gallery that perfectly complements our physical space.",
+        clientImage:"/clients/hunt.jpg",
+        projectImage:"/projects/margaret.png",
+        alt: "Margaret Hunt, Owner of Margaret Hunt Gallery"
+      }
+    ]
+  },
+
   reviews:{
     intro:"See what our satisfied customers in Trinidad and southern Colorado are saying about our web development and digital marketing services. We're proud to have worked with some of the best local businesses in the area.",
     list:[
