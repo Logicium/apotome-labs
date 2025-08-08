@@ -71,11 +71,11 @@ defineProps({
 
           <div class="links gray">
             <div class="top small black">RESOURCES</div>
-            <RouterLink to="/"><div>Blog</div></RouterLink>
-            <RouterLink to="/"><div>FAQ</div></RouterLink>
-            <RouterLink to="/"><div>Support</div></RouterLink>
-            <RouterLink to="/"><div>Terms</div></RouterLink>
-            <RouterLink to="/"><div>Privacy</div></RouterLink>
+            <RouterLink to="/blog"><div>Blog</div></RouterLink>
+            <RouterLink to="/faq"><div>FAQ</div></RouterLink>
+            <RouterLink to="/support"><div>Support</div></RouterLink>
+            <RouterLink to="/terms"><div>Terms</div></RouterLink>
+            <RouterLink to="/privacy"><div>Privacy</div></RouterLink>
           </div>
 
         </div>

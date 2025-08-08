@@ -57,6 +57,102 @@ const data = {
     ]
   },
 
+  // Add this to your data.ts file in the main data object:
+
+  blog: {
+    intro: "Latest insights on web development, design, and digital strategy for businesses in Trinidad and southern Colorado.",
+    list: [
+      {
+        id: 1,
+        title: "The Future of Web Development in Rural Colorado",
+        excerpt: "How small businesses in Trinidad and southern Colorado can leverage modern web technologies to compete on a global scale.",
+        content: "Rural businesses face unique challenges in the digital landscape, but with the right approach, they can turn their location into an advantage. Local expertise, personal relationships, and community trust create opportunities that big city agencies simply cannot replicate.",
+        date: "2024-08-05",
+        readTime: "5 min read",
+        category: "Business",
+        featured: true,
+        image: "/agency/agency1.jpg"
+      },
+      {
+        id: 2,
+        title: "Mobile-First Design: Why Your Website Needs It",
+        excerpt: "With over 60% of web traffic coming from mobile devices, responsive design is no longer optional for Colorado businesses.",
+        content: "Mobile usage continues to dominate web traffic, making responsive design essential for business success. We explore the key principles of mobile-first design and how local businesses can implement these strategies effectively.",
+        date: "2024-07-28",
+        readTime: "4 min read",
+        category: "Design",
+        featured: true,
+        image: "/agency/agency2.jpg"
+      },
+      {
+        id: 3,
+        title: "Local SEO Strategies for Trinidad Businesses",
+        excerpt: "Practical tips to improve your search rankings and attract more local customers in southern Colorado.",
+        content: "Local SEO is crucial for businesses serving specific geographic areas. We break down the essential strategies that help Trinidad businesses rank higher in local search results and attract more qualified leads.",
+        date: "2024-07-20",
+        readTime: "6 min read",
+        category: "SEO",
+        featured: true,
+        image: "/agency/agency3.jpg"
+      },
+      {
+        id: 4,
+        title: "E-commerce Trends for Small Businesses",
+        excerpt: "How local retailers can build successful online stores that compete with major e-commerce platforms.",
+        content: "Small businesses can compete effectively in e-commerce by focusing on personalized customer service, local expertise, and community connections. Learn the strategies that work for Trinidad businesses.",
+        date: "2024-07-15",
+        readTime: "7 min read",
+        category: "E-commerce",
+        featured: false,
+        image: "/agency/agency4.jpg"
+      },
+      {
+        id: 5,
+        title: "The Role of AI in Modern Web Development",
+        excerpt: "Understanding how artificial intelligence is transforming web development and what it means for local businesses.",
+        content: "AI is revolutionizing web development, from automated testing to personalized user experiences. We explore practical applications that benefit small and medium businesses in southern Colorado.",
+        date: "2024-07-10",
+        readTime: "5 min read",
+        category: "Technology",
+        featured: false,
+        image: "/agency/agency5.jpg"
+      },
+      {
+        id: 6,
+        title: "Building Trust Through Web Design",
+        excerpt: "How thoughtful design choices can establish credibility and trust with your online visitors.",
+        content: "Trust is the foundation of successful business relationships. We examine how design elements, user experience principles, and content strategies work together to build visitor confidence.",
+        date: "2024-07-03",
+        readTime: "4 min read",
+        category: "Design",
+        featured: false,
+        image: "/agency/agency6.jpg"
+      },
+      {
+        id: 7,
+        title: "Website Performance Optimization",
+        excerpt: "Speed matters more than ever. Learn how to optimize your website for better performance and user experience.",
+        content: "Website speed directly impacts user experience and search rankings. We share practical techniques to improve loading times and overall performance for Trinidad businesses.",
+        date: "2024-06-25",
+        readTime: "5 min read",
+        category: "Technology",
+        featured: false,
+        image: "/agency/agency7.jpg"
+      },
+      {
+        id: 8,
+        title: "Content Strategy for Local Businesses",
+        excerpt: "Creating compelling content that connects with your community and drives business growth.",
+        content: "Effective content strategy goes beyond just writing blog posts. Learn how to create valuable content that resonates with your local audience and supports your business goals.",
+        date: "2024-06-18",
+        readTime: "6 min read",
+        category: "Business",
+        featured: false,
+        image: "/agency/agency8.jpg"
+      }
+    ]
+  },
+
   testimonials:{
     intro:"Hear from our clients about their experience working with us and the impact our services have had on their businesses.",
     list:[
