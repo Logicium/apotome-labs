@@ -2,6 +2,7 @@
 import BookingPanel from "@/panels/BookingPanel.vue";
 import FooterPanel from "@/panels/FooterPanel.vue";
 import SEO from "@/components/SEO.vue";
+import Footer from "@/components/Footer.vue";
 </script>
 
 <template>
@@ -12,6 +13,7 @@ import SEO from "@/components/SEO.vue";
       keywords="contact web developer Trinidad CO, book consultation, web design quote, hire digital agency Trinidad, southern Colorado web services"
     />
     <BookingPanel/>
+    <FooterPanel :nocta="true"/>
   </div>
 </template>
 

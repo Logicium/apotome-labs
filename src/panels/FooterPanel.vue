@@ -1,28 +1,36 @@
 <script setup lang="ts">
-
 import data from "../data/data.ts";
 import ArrowIcon from "@/assets/icons/ArrowIcon.vue";
 import LinkedinIcon from "@/assets/icons/LinkedinIcon.vue";
 import FacebookIcon from "@/assets/icons/FacebookIcon.vue";
 import InstaIcon from "@/assets/icons/InstaIcon.vue";
+
+defineProps({
+  nocta: {
+    type: Boolean,
+    default: false
+  }
+});
 </script>
 
 <template>
 
-  <div class="panel">
-    <div class="panelInfo">
-      <div class="big title">Ready to Take Your Digital Brand to the Next Level?</div>
-      <div class="flex">
-        <div class="small subtitle">{{data.cta.intro}}</div>
-        <RouterLink to="/contact" class="cta"><div class="button cta">GET STARTED <ArrowIcon/></div></RouterLink>
+  <div class="panel" :class="{ 'panel-nocta': nocta }">
+    <template v-if="!nocta">
+      <div class="panelInfo">
+        <div class="big title">Ready to Take Your Digital Brand to the Next Level?</div>
+        <div class="flex">
+          <div class="small subtitle">{{data.cta.intro}}</div>
+          <RouterLink to="/contact" class="cta"><div class="button cta">GET STARTED <ArrowIcon/></div></RouterLink>
+        </div>
       </div>
-    </div>
 
-    <div class="imageRow">
-      <div class="image">
+      <div class="imageRow">
+        <div class="image">
 
+        </div>
       </div>
-    </div>
+    </template>
 
     <div class="footer">
 
@@ -94,6 +102,10 @@ import InstaIcon from "@/assets/icons/InstaIcon.vue";
 .panel{
   display: grid;
   grid-template-rows: auto 1fr auto;
+}
+
+.panel-nocta {
+  height: fit-content;
 }
 
 .panelInfo{
