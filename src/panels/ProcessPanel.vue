@@ -133,7 +133,7 @@ const goToStage = (index) => {
           <div class="stageInfo" :key="currentStageIndex">
             <div class="stageHeader">
               <div class="med stageTitle">{{ currentStage.title }}</div>
-              <div class="stageDescription">{{ currentStage.description }}</div>
+              <div class="stageDescription small">{{ currentStage.description }}</div>
             </div>
 
             <div class="detailsSection">
@@ -227,7 +227,8 @@ const goToStage = (index) => {
   cursor: pointer;
   transition: all 0.3s ease;
   &:hover {
-    color: #666;
+    background-color: black;
+    color: white;
   }
 
   &.active {
@@ -264,12 +265,15 @@ const goToStage = (index) => {
 
   .stageDescription {
     line-height: 1.5;
-    color: #666;
   }
+  padding-bottom: 1rem;
+  border-bottom: 1px solid black;
 }
 
 .detailsSection {
-  padding-top: 2rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid black;
 }
 
 .sectionTitle {
@@ -303,7 +307,9 @@ const goToStage = (index) => {
 }
 
 .deliverableSection {
-  padding-top: 2rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid black;
 }
 
 .deliverable {
