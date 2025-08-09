@@ -173,7 +173,6 @@ const totalPages = computed(() => Math.ceil(filteredAndSortedPosts.value.length 
 
 <style scoped lang="scss">
 .panel {
-  padding-top: 100px;
   display: grid;
   grid-template-rows: auto auto 1fr;
   gap: 3rem;
@@ -188,8 +187,7 @@ const totalPages = computed(() => Math.ceil(filteredAndSortedPosts.value.length 
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
-  padding: 2rem 0;
-  border-top: 1px solid #e0e0e0;
+  padding-bottom: 2rem;
   border-bottom: 1px solid #e0e0e0;
 }
 

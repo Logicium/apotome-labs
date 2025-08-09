@@ -124,8 +124,8 @@ onUnmounted(() => {
 .panel {
   padding-top: 100px;
   display: grid;
-  grid-template-rows: auto 1fr auto;
-  gap: 3rem;
+  grid-template-rows: 1fr auto auto;
+  gap: 2rem;
 }
 
 .title {
