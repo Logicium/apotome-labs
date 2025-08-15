@@ -60,4 +60,33 @@ const selectPackage = (pkg) => {
   grid-gap: 2rem;
   margin-top: 2rem;
 }
+
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+  .panel {
+    padding: 1rem;
+    padding-top: 100px;
+  }
+
+  .title {
+    width: 100%;
+    font-size: 2.5rem !important;
+    line-height: 2.5rem !important;
+  }
+
+  .maintenanceGrid {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto auto;
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .title {
+    font-size: 2rem !important;
+    line-height: 2rem !important;
+  }
+}
 </style>

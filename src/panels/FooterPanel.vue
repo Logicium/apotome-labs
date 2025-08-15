@@ -190,7 +190,9 @@ defineProps({
 
 .logo{
   width: 35px;
+  min-width: 35px;
   height: 35px;
+  min-height: 35px;
   background-color: black;
   color: white;
   display: flex;

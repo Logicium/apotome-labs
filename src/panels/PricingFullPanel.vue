@@ -137,6 +137,7 @@ const closeDetailPanel = () => {
   position: absolute;
   right: 0;
   bottom: -33%;
+  z-index: -1;
 }
 
 .row {
@@ -157,5 +158,56 @@ const closeDetailPanel = () => {
 .fade-enter-from,
 .fade-leave-to {
   opacity: 0;
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+  .panel {
+    padding: 1rem;
+    padding-top: 100px;
+  }
+
+  .title {
+    width: 100%;
+    font-size: 2.5rem !important;
+    line-height: 2.5rem !important;
+  }
+
+  .pricingGrid {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto;
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+  }
+
+  .priceCardLarge {
+    grid-column: span 1;
+  }
+
+  .priceCardSmall,
+  .priceCardLarge {
+    padding: 1.5rem;
+  }
+
+  .num {
+    font-size: 8rem !important;
+    bottom: -20%;
+  }
+}
+
+@media (max-width: 480px) {
+  .title {
+    font-size: 2rem !important;
+    line-height: 2rem !important;
+  }
+
+  .priceCardSmall,
+  .priceCardLarge {
+    padding: 1rem;
+  }
+
+  .num {
+    font-size: 6rem !important;
+  }
 }
 </style>

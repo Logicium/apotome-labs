@@ -9,7 +9,7 @@ const featuredPosts = computed(() => {
 
 const currentIndex = ref(0);
 const isAutoPlaying = ref(true);
-let intervalId: number | null = null;
+let intervalId: ReturnType<typeof setInterval> | null = null;
 
 // Auto-cycle through featured posts every 4 seconds
 const startAutoPlay = () => {
