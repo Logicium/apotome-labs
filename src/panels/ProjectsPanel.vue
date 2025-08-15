@@ -36,6 +36,7 @@ const featuredProjects = data.projects.list.filter(project => project.featured);
 .panel{
   display: grid;
   grid-template-rows: auto 1fr;
+  //width: calc(100vw - 2rem);
 }
 
 .grid{
@@ -60,6 +61,10 @@ const featuredProjects = data.projects.list.filter(project => project.featured);
 
   .panel{
     height: fit-content;
+  }
+
+  .title,.subtitle{
+    width: 100%;
   }
 
 }

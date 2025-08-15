@@ -216,11 +216,7 @@ a:hover{
     height: fit-content;
   }
 
-  .title{
-    width: 100%;
-  }
-
-  .subtitle{
+  .title,.subtitle{
     width: 100%;
   }
 

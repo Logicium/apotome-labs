@@ -142,6 +142,10 @@ const decrementReviews = () => {
     height: fit-content;
   }
 
+  .title,.subtitle{
+    width: 100%;
+  }
+
   .imageCol{
     grid-row: 1;
     min-height: 200px;

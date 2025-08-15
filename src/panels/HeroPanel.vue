@@ -116,6 +116,11 @@ import ArrowIcon from "@/assets/icons/ArrowIcon.vue";
 
 @media (max-width: 768px) {
 
+  .panel{
+    height: fit-content;
+    grid-template-rows: auto 200px 1fr;
+  }
+
   .title,.subtitle{
     width: 100%;
   }

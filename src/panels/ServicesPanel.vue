@@ -81,6 +81,10 @@ const handleToggle = (serviceNumber) => {
     height: fit-content;
   }
 
+  .title,.subtitle{
+    width: 100%;
+  }
+
   .serviceGrid{
     grid-template-columns: 1fr;
     grid-template-rows: auto 1fr;

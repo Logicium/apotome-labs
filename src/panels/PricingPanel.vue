@@ -28,6 +28,7 @@ import PricingCardVertical from "@/components/cards/PricingCardVertical.vue";
 
 .panel{
   display: grid;
+  //width: calc(100vw - 4rem);
   grid-template-rows: auto 1fr;
 }
 
@@ -45,6 +46,10 @@ import PricingCardVertical from "@/components/cards/PricingCardVertical.vue";
 @media (max-width: 768px) {
   .panel{
     height: fit-content;
+  }
+
+  .title,.subtitle{
+    width: 100%;
   }
 
   .pricingCards{
