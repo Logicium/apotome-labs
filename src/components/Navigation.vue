@@ -4,6 +4,10 @@ import {ref, onMounted, onUnmounted} from "vue";
 
 const showMenu = ref(false);
 
+const resetMenu = function(){
+  showMenu.value = false;
+}
+
 const checkScreenWidth = () => {
   if (window.innerWidth > 768) {
     showMenu.value = false;
@@ -28,7 +32,7 @@ onUnmounted(() => {
 
   <div class="navWrap">
     <nav :class="{'active':showMenu}">
-      <RouterLink to="/">
+      <RouterLink to="/" @click="resetMenu">
         <div class="logoWrap">
           <div class="logo">///</div>
           <div class="med">APOTOME LABS</div>
@@ -48,11 +52,11 @@ onUnmounted(() => {
 
     </nav>
     <div class="menu" :class="{'active':showMenu}">
-      <RouterLink to="/about"><div>ABOUT</div></RouterLink>
-      <RouterLink to="/projects"><div>PROJECTS</div></RouterLink>
-      <RouterLink to="/testimonials"><div>TESTIMONIALS</div></RouterLink>
-      <RouterLink to="/pricing"><div>PRICING</div></RouterLink>
-      <RouterLink to="/contact"><div>CONTACT</div></RouterLink>
+      <RouterLink to="/about" @click="resetMenu"><div>ABOUT</div></RouterLink>
+      <RouterLink to="/projects" @click="resetMenu"><div>PROJECTS</div></RouterLink>
+      <RouterLink to="/testimonials" @click="resetMenu"><div>TESTIMONIALS</div></RouterLink>
+      <RouterLink to="/pricing" @click="resetMenu"><div>PRICING</div></RouterLink>
+      <RouterLink to="/contact" @click="resetMenu"><div>CONTACT</div></RouterLink>
     </div>
   </div>
 
