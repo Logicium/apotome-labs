@@ -123,7 +123,8 @@ nav{
 }
 
 .menu{
-  display: none;
+  display: flex;
+  visibility: hidden;
   background-color: black;
   flex-direction: column;
   align-items: end;
@@ -138,6 +139,7 @@ nav{
 
 .menu.active{
   opacity: 1;
+  visibility: visible;
   transition: 0.5s;
 }
 
@@ -162,7 +164,6 @@ nav{
     display: none;
   }
   .menu{
-    display: flex;
     visibility: visible;
   }
 

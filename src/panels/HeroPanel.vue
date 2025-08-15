@@ -74,6 +74,7 @@ import ArrowIcon from "@/assets/icons/ArrowIcon.vue";
 
 .image{
   width: 100%;
+  min-height: 200px;
   height: 100%;
   background-image: url("/public/agency/agency1.jpg");
 }
@@ -111,6 +112,31 @@ import ArrowIcon from "@/assets/icons/ArrowIcon.vue";
 
 .num{
   color: #a8a8a8;
+}
+
+@media (max-width: 768px) {
+
+  .title,.subtitle{
+    width: 100%;
+  }
+
+  .infoRow{
+    flex-direction: column;
+  }
+
+  .buttons{
+    margin-top: 2rem;
+  }
+
+  .aboutRow{
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr;
+  }
+
+  .about{
+    margin-top: 2rem;
+  }
+
 }
 
 

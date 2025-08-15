@@ -165,12 +165,12 @@ defineProps({
 
 .image{
   height: 100%;
+  min-height: 200px;
   background-image: url("/public/mountain/fishers-peak.jpg");
   //filter: grayscale(1);
   display: flex;
   flex-direction: column;
   color: white;
-  padding: 1rem;
 }
 
 .linksCol{
@@ -208,6 +208,45 @@ a{
 a:hover{
   color: black;
   transition: 0.5s;
+}
+
+@media (max-width: 768px) {
+
+  .panel{
+    height: fit-content;
+  }
+
+  .title{
+    width: 100%;
+  }
+
+  .subtitle{
+    width: 100%;
+  }
+
+  .imageRow{
+    margin-bottom: 0;
+  }
+
+  .flex{
+    flex-direction: column;
+  }
+
+  .cta{
+    margin-top: 1rem;
+    margin-left: 0;
+    width: fit-content;
+  }
+
+  .linksRow{
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .linksCol{
+    margin-left: 0;
+    justify-content: start;
+  }
 }
 
 </style>

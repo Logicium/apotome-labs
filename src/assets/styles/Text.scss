@@ -21,3 +21,13 @@
 .bold{
   font-weight: 500;
 }
+
+@media (max-width: 768px) {
+  .big{
+    font-size: 2.5rem;
+  }
+
+  .med{
+    font-size: 1.25rem;
+  }
+}

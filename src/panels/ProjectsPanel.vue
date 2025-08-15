@@ -56,4 +56,12 @@ const featuredProjects = data.projects.list.filter(project => project.featured);
   gap: 2rem;
 }
 
+@media (max-width: 768px) {
+
+  .panel{
+    height: fit-content;
+  }
+
+}
+
 </style>

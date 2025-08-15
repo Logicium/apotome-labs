@@ -21,7 +21,7 @@ const props = defineProps(['name', 'type', 'description', 'image', 'featured']);
 
 <style scoped>
 .projectCard {
-  width: 40vw;
+  width: max(40vw,250px);
   display: grid;
   grid-template-rows: 1fr 1fr;
   position: relative;
@@ -46,5 +46,13 @@ const props = defineProps(['name', 'type', 'description', 'image', 'featured']);
 .button {
   margin-top: 1rem;
   width: fit-content;
+}
+
+@media (max-width: 768px) {
+
+  .projectCard{
+    grid-template-rows: 200px auto;
+  }
+
 }
 </style>

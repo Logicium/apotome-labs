@@ -41,4 +41,14 @@ import PricingCardVertical from "@/components/cards/PricingCardVertical.vue";
   gap: 2rem;
   margin-top: 2rem;
 }
+
+@media (max-width: 768px) {
+  .panel{
+    height: fit-content;
+  }
+
+  .pricingCards{
+    grid-template-columns: 1fr;
+  }
+}
 </style>

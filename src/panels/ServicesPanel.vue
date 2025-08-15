@@ -75,4 +75,22 @@ const handleToggle = (serviceNumber) => {
   background-image: url("/agency/agency2.jpg");
 }
 
+@media (max-width: 768px) {
+
+  .panel{
+    height: fit-content;
+  }
+
+  .serviceGrid{
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr;
+  }
+
+  .serviceImage{
+    min-height: 200px;
+    grid-row:1;
+  }
+
+}
+
 </style>

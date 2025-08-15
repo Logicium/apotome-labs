@@ -136,4 +136,20 @@ const decrementReviews = () => {
   transition: 0.5s;
 }
 
+@media (max-width: 768px) {
+
+  .panel{
+    height: fit-content;
+  }
+
+  .imageCol{
+    grid-row: 1;
+    min-height: 200px;
+  }
+
+  .grid{
+    grid-template-columns: 1fr;
+  }
+}
+
 </style>
