@@ -111,7 +111,7 @@ const aspectRatio = computed(() => {
   grid-template-columns: 1fr 1fr;
   grid-gap: 2rem;
   height: 500px;
-  margin-top: 3rem;
+  margin-top: 2rem;
 }
 
 .projectInfoCol {
@@ -159,6 +159,16 @@ margin-top: 0;
 .projectImageCol {
   position: relative;
   overflow: hidden;
+}
+
+@media (max-width: 768px) {
+  .projectContainer {
+    grid-template-columns: 1fr;
+  }
+  .projectImageCol {
+    grid-row: 1;
+    height: 100px;
+  }
 }
 
 /* These styles have been moved to the DoubleImage component */
