@@ -65,8 +65,7 @@ const selectPackage = (pkg) => {
 /* Mobile Styles */
 @media (max-width: 768px) {
   .panel {
-    padding: 1rem;
-    padding-top: 100px;
+    height: fit-content;
   }
 
   .title {
@@ -76,8 +75,8 @@ const selectPackage = (pkg) => {
   }
 
   .maintenanceGrid {
-    grid-template-columns: 1fr;
-    grid-template-rows: auto auto auto auto;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto auto auto;
     gap: 1.5rem;
     margin-top: 1.5rem;
   }

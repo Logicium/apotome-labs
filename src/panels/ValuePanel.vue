@@ -154,6 +154,9 @@ import ArrowIcon from "@/assets/icons/ArrowIcon.vue";
 
 // Mobile responsiveness
 @media (max-width: 768px) {
+  .panel {
+    height: fit-content;
+  }
   .valueGrid {
     grid-template-columns: 1fr;
     grid-gap: 2rem;

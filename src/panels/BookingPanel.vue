@@ -294,14 +294,8 @@ watch(availableTimeSlots, () => {
 
         </div>
 
-
         <!-- Right Column: Image -->
-        <div class="image">
-          <!-- This div will have the background image -->
-        </div>
-
-        <!-- Confirmation Panel (now absolutely positioned) -->
-
+        <div class="image"/>
 
       </div>
     </div>
@@ -332,7 +326,7 @@ watch(availableTimeSlots, () => {
   display: flex;
   flex-direction: column;
   gap: 2rem;
-  position: relative; /* Added for absolute positioning of confirmationPanel */
+  position: relative;
 }
 
 .dateSelection {
@@ -442,6 +436,17 @@ watch(availableTimeSlots, () => {
   color: #a8a8a8;
   font-size: 1.2rem;
   text-align: center;
+}
+
+@media (max-width: 768px) {
+  .panel{
+    height: fit-content;
+  }
+
+  .bookingFlexContainer{
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 200px;
+  }
 }
 
 </style>

@@ -163,8 +163,7 @@ const closeDetailPanel = () => {
 /* Mobile Styles */
 @media (max-width: 768px) {
   .panel {
-    padding: 1rem;
-    padding-top: 100px;
+
   }
 
   .title {

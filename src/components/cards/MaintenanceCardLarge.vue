@@ -85,4 +85,11 @@ const props = defineProps({
 .fade-leave-to {
   opacity: 0;
 }
+
+@media (max-width: 768px) {
+  .maintenanceCardLarge {
+    grid-column: span 2;
+    grid-row: 3;
+  }
+}
 </style>

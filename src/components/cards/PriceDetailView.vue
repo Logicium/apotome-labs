@@ -50,8 +50,9 @@ const closeDetailPanel = () => {
 .detailPanelOverlay {
   position: absolute;
   width: 100%;
-  height: 100%;
-  z-index: 10;
+  min-height: 100%;
+  height: fit-content;
+  z-index: 1;
 }
 
 .tag.button{
@@ -132,5 +133,16 @@ const closeDetailPanel = () => {
   height: 1rem;
   background-color: black;
   margin-right: 1rem;
+}
+
+@media (max-width: 768px) {
+  .detailPanel {
+    padding: 1rem;
+  }
+
+  .featureList {
+    grid-template-columns: 1fr;
+    padding-bottom: 1rem;
+  }
 }
 </style>

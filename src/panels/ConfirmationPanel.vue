@@ -221,7 +221,7 @@ const cancelBooking = () => {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  z-index: 10;
+  z-index: 1;
   transition: 0.5s;
 }
 
@@ -319,7 +319,7 @@ const cancelBooking = () => {
   transform: translate(-50%, -50%);
   padding: 1rem 2rem;
   color: white;
-  z-index: 20;
+  z-index: 2;
   text-align: center;
   max-width: 80%;
   background-color: black;
