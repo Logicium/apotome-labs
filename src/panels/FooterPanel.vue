@@ -105,6 +105,7 @@ defineProps({
 }
 
 .panel-nocta {
+  min-height: fit-content;
   height: fit-content;
 }
 

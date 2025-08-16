@@ -71,12 +71,13 @@ import data from "../data/data.ts";
 @media (max-width: 768px) {
   .panel{
     height: fit-content;
-    grid-template-rows: auto 200px;
+    grid-template-rows: auto 200px 1fr;
     grid-template-columns: 1fr 1fr;
   }
 
   .aboutRow{
     grid-column: span 2;
+    height: fit-content;
   }
 
   .img1{
