@@ -32,7 +32,7 @@ const toggleCard = () => {
 <template>
   <div class="service">
     <div class="small num">{{ number }}</div>
-    <div>
+    <div class="content">
       <div class="med name">{{ name }}</div>
       <div class="infoWrap" :class="{hidden:!showFull}">
         <div class="tags flex">
@@ -58,6 +58,15 @@ const toggleCard = () => {
   gap: 1rem;
   padding: 1rem 0;
   border-bottom: 1px solid black;
+  width: 100%;
+  min-width: 0;
+}
+
+.content {
+  flex: 1;
+  min-width: 0;
+  overflow-wrap: break-word;
+  word-break: break-word;
 }
 
 .control{
@@ -66,8 +75,10 @@ const toggleCard = () => {
   line-height: 1.5rem;
   font-weight: 200;
   width: 30px;
+  min-width: 30px;
   cursor: pointer;
   display: flex;
+  flex-shrink: 0;
 }
 
 .infoWrap{
@@ -93,6 +104,12 @@ const toggleCard = () => {
 
 .name{
   line-height: 1.5rem;
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+
+.num {
+  flex-shrink: 0;
 }
 
 .tag{

@@ -52,11 +52,12 @@ const handleToggle = (serviceNumber) => {
 </div>
 </template>
 
-<style scoped>
+<style lang="scss" scoped>
 
 .panel{
   display: grid;
   grid-template-rows: auto 1fr;
+
 }
 
 .serviceGrid{
@@ -86,7 +87,7 @@ const handleToggle = (serviceNumber) => {
   }
 
   .serviceGrid{
-    grid-template-columns: 1fr;
+    grid-template-columns: auto;
     grid-template-rows: auto 1fr;
   }
 

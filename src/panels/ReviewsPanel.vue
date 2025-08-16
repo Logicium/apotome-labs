@@ -154,6 +154,20 @@ const decrementReviews = () => {
   .grid{
     grid-template-columns: 1fr;
   }
+
+  .reviewerInfo{
+    margin-top: 1rem;
+  }
+
+  .reviewerRow{
+    display: grid;
+    grid-template-rows: auto 1fr;
+  }
+
+  .buttons{
+    grid-column: 2;
+    grid-row: 1;
+  }
 }
 
 </style>

@@ -130,7 +130,12 @@ import ArrowIcon from "@/assets/icons/ArrowIcon.vue";
   }
 
   .buttons{
+
     margin-top: 2rem;
+  }
+
+  .button{
+    width: fit-content;
   }
 
   .aboutRow{
