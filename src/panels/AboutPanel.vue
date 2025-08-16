@@ -5,14 +5,15 @@ import data from "../data/data.ts";
 
 <template>
   <div class="panel">
+
     <div class="aboutRow">
       <div class="big title">{{data.about.intro}}</div>
       <div class="infoRow">
         <div class="small aboutInfo">{{data.about.story}}</div>
         <div class="tag"> ABOUT OUR MISSION </div>
       </div>
-
     </div>
+
     <div class="image img1"></div>
     <div class="image img2"></div>
     <div class="image img3"></div>
@@ -65,6 +66,36 @@ import data from "../data/data.ts";
 
 .img3{
   background-image: url("/agency/agency7.jpg");
+}
+
+@media (max-width: 768px) {
+  .panel{
+    height: fit-content;
+    grid-template-rows: auto 200px;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .aboutRow{
+    grid-column: span 2;
+  }
+
+  .img1{
+    display: none;
+  }
+
+  .infoRow{
+    display: grid;
+  }
+
+  .aboutInfo{
+    width: 100%;
+  }
+
+  .tag{
+    grid-row:1;
+    margin-bottom: 1rem;
+  }
+
 }
 
 </style>

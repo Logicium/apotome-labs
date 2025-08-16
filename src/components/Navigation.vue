@@ -163,9 +163,6 @@ nav{
   .links{
     display: none;
   }
-  .menu{
-    visibility: visible;
-  }
 
 }
 

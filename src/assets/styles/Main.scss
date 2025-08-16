@@ -79,3 +79,9 @@ a{
 .top{
   margin-bottom: 1rem;
 }
+
+@media (max-width: 768px) {
+  .title, .subtitle{
+    width: 100% !important;
+  };
+}

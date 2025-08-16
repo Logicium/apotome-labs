@@ -6,7 +6,7 @@ import data from "../data/data.ts";
 <template>
   <div class="panel">
     <div class="big title">We build beautiful, functional websites that help local businesses succeed.</div>
-    <div class="tag"> MEET OUR COMPANY </div>
+    <div class="tag"> MEET OUR FOUNDER </div>
     <div class="small story">
       <div>{{data.founder.story}}</div>
       <div>{{data.founder.outro}}</div>
@@ -27,7 +27,6 @@ import data from "../data/data.ts";
 
 .title{
   margin-bottom: 0;
-
   grid-column: span 3;
 }
 
@@ -50,6 +49,25 @@ import data from "../data/data.ts";
   grid-column: span 2;
   background-image: url("/agency/agency9.jpg");
   filter: grayscale(100%);
+}
+
+@media (max-width: 768px) {
+  .panel{
+    height: auto;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto 200px;
+  }
+  .title{
+    grid-column: span 1;
+  }
+  .story{
+    grid-column: span 1;
+  }
+  .aboutImg{
+    grid-column: span 1;
+    grid-row: 4;
+  }
+
 }
 
 </style>
