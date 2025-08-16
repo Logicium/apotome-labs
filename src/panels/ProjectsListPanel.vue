@@ -203,4 +203,88 @@ const closeProjectPanel = () => {
   flex-direction: column;
   margin-top: 2rem;
 }
+
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+  .panel {
+    height: fit-content;
+    gap: 2rem;
+    padding-bottom: 2rem;
+  }
+
+  .title {
+    width: 100% !important;
+    font-size: 2.5rem !important;
+    line-height: 2.5rem !important;
+  }
+
+  .subtitle {
+    width: 100% !important;
+  }
+
+  .searchFilterContainer {
+    margin: 1.5rem 0;
+    gap: 1.5rem;
+  }
+
+  .searchInput {
+    font-size: 1rem;
+    padding: 0 1rem;
+  }
+
+  .filterContainer {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .checkboxGroup {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    width: 100%;
+  }
+
+  .checkboxLabel {
+    font-size: 0.9rem;
+    white-space: nowrap;
+  }
+
+  .projectsList {
+    margin-top: 1rem;
+  }
+}
+
+/* Small phone adjustments */
+@media (max-width: 480px) {
+  .panel {
+    padding-bottom: 1.5rem;
+  }
+
+  .title {
+    font-size: 2rem !important;
+    line-height: 2rem !important;
+  }
+
+  .searchFilterContainer {
+    margin: 1rem 0;
+    gap: 1rem;
+  }
+
+  .checkboxGroup {
+    gap: 0.75rem;
+  }
+
+  .checkboxLabel {
+    font-size: 0.85rem;
+  }
+
+  .checkboxCustom {
+    width: 0.9rem;
+    height: 0.9rem;
+    margin-right: 0.4rem;
+  }
+}
+
 </style>

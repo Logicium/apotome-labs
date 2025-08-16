@@ -23,18 +23,13 @@ const handleClick = () => {
   </div>
 </template>
 
-<style scoped>
+<style scoped lang="scss">
 .projectListCard {
   display: grid;
   grid-template-columns: 2fr 1fr; /* 2/3 for info, 1/3 for image */
   gap: 1rem;
   border: 1px solid black;
   margin-bottom: 1.5rem;
-  transition: 0.3s;
-}
-
-.projectListCard:hover {
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .projectInfo {
@@ -63,5 +58,96 @@ const handleClick = () => {
 .button {
   width: fit-content;
   margin-top: 0.5rem;
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+  .projectListCard {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 2rem;
+    gap: 0;
+  }
+
+  .projectImage {
+    order: 1;
+    min-height: 200px;
+    width: 100%;
+  }
+
+  .projectInfo {
+    order: 2;
+    padding: 1.5rem;
+    gap: 1rem;
+  }
+
+  .projectHeader {
+    margin-bottom: 1rem;
+
+    .med {
+      font-size: 1.25rem !important;
+      line-height: 1.3 !important;
+      margin-bottom: 0.5rem;
+    }
+  }
+
+  .tag {
+    font-size: 0.8rem;
+    margin-top: 0;
+  }
+
+  .projectDescription {
+    gap: 1.5rem;
+
+    .small {
+      line-height: 1.5;
+      color: #666;
+    }
+  }
+
+  .button {
+
+    font-size: 0.9rem;
+  }
+}
+
+/* Small phone adjustments */
+@media (max-width: 480px) {
+  .projectListCard {
+    margin-bottom: 1.5rem;
+  }
+
+  .projectImage {
+    min-height: 180px;
+  }
+
+  .projectInfo {
+    padding: 1rem;
+  }
+
+  .projectHeader {
+    margin-bottom: 0.75rem;
+
+    .med {
+      font-size: 1.1rem !important;
+      line-height: 1.2 !important;
+    }
+  }
+
+  .tag {
+    font-size: 0.75rem;
+  }
+
+  .projectDescription {
+    gap: 1rem;
+
+    .small {
+      font-size: 0.9rem;
+    }
+  }
+
+  .button {
+    font-size: 0.85rem;
+  }
 }
 </style>

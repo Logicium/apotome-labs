@@ -86,9 +86,7 @@ const handleToggle = (testimonialTitle) => {
 
       <!-- Client image and controls row for mobile only -->
       <div class="clientControlsRow">
-        <transition name="fade">
-          <div class="image imgSmall1Mobile" :key="testimonialIndex" :style="{backgroundImage: `url(${clientImageUrl})`}"/>
-        </transition>
+        <div class="image imgSmall1Mobile" :style="{backgroundImage: `url(${clientImageUrl})`}"/>
 
         <div class="buttons flex mobileButtons">
           <div class="button" @click="decrementTestimonials">
@@ -326,7 +324,6 @@ const handleToggle = (testimonialTitle) => {
 
   .clientControlsRow {
     gap: 1rem;
-    padding-bottom: 1rem;
   }
 
   .imgSmall1Mobile {
