@@ -309,15 +309,6 @@ const goToStage = (index) => {
 .deliverableSection {
   padding-top: 1rem;
   padding-bottom: 1rem;
-  border-bottom: 1px solid black;
-}
-
-.deliverable {
-  background-color: #f9f9f9;
-  padding: 1.5rem;
-  border: 1px solid #e0e0e0;
-  font-weight: 500;
-  line-height: 1.4;
 }
 
 // Fade transition
@@ -335,47 +326,111 @@ const goToStage = (index) => {
 @media (max-width: 768px) {
   .panel {
     gap: 2rem;
+    height: fit-content;
   }
 
   .processHeader {
     .title {
-      width: 100%;
+      width: 100% !important;
       font-size: 2.5rem !important;
       line-height: 2.5rem !important;
     }
 
     .subtitle {
-      width: 100%;
+      width: 100% !important;
     }
   }
 
   .processGrid {
-    grid-template-columns: 1fr;
+    display: flex;
+    flex-direction: column;
     gap: 2rem;
+    min-height: auto;
   }
 
-  .detailsSection,
-  .deliverableSection {
-    border-top: 1px solid #e0e0e0;
-    padding-top: 1rem;
+  .progressColumn {
+    order: 1;
+    gap: 1.5rem;
+  }
+
+  .progressBar {
+    margin-bottom: 0;
   }
 
   .stageNavigation {
-    flex-direction: row;
-    overflow-x: auto;
-    gap: 1rem;
-    padding-bottom: 1rem;
-
-    &::-webkit-scrollbar {
-      display: none;
-    }
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.5rem;
+    overflow: visible;
   }
 
   .navItem {
     flex-direction: column;
-    min-width: 80px;
     text-align: center;
+    padding: 0.75rem 0.5rem;
+    gap: 0.25rem;
+  }
+
+  .stageNumber {
+    font-size: 0.9rem;
+    min-width: auto;
+  }
+
+  .stageName {
+    font-size: 0.7rem;
+    line-height: 1.2;
+  }
+
+  .infoColumn {
+    order: 2;
+    gap: 2rem;
+  }
+
+  .stageHeader {
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #e0e0e0;
+  }
+
+  .detailsSection {
+    padding: 1rem 0;
+    border-bottom: 1px solid #e0e0e0;
+  }
+
+  .deliverableSection {
+    padding: 1rem 0;
+    border-bottom: none;
+  }
+
+  .detailsList {
+    gap: 0.75rem;
+  }
+
+  .detailItem {
+    gap: 0.75rem;
+  }
+}
+
+// Small phone adjustments
+@media (max-width: 480px) {
+  .processHeader .title {
+    font-size: 2rem !important;
+    line-height: 2rem !important;
+  }
+
+  .stageNavigation {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .navItem {
     padding: 0.5rem;
+  }
+
+  .stageName {
+    font-size: 0.65rem;
+  }
+
+  .stageNumber {
+    font-size: 0.8rem;
   }
 }
 </style>
