@@ -104,12 +104,7 @@ import ArrowIcon from "@/assets/icons/ArrowIcon.vue";
   display: flex;
   gap: 1.5rem;
   padding-bottom: 1rem;
-  border-bottom: 1px solid #e0e0e0;
-
-  &:last-child {
-    border-bottom: none;
-    padding-bottom: 0;
-  }
+  border-bottom: 1px solid #a8a8a8;
 }
 
 .pointNumber {

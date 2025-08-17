@@ -19,6 +19,7 @@ const handleSelect = () => {
     <div class="row">
       <div class="tag button" @click="handleSelect"> LEARN MORE </div>
       <div class="big num gray">{{ id }}</div>
+      <div class="mobileRate">{{ price }}{{ duration }}</div>
     </div>
   </div>
 </template>
@@ -81,11 +82,11 @@ const handleSelect = () => {
     grid-row: auto;
   }
 
-  .num{
+  .num, .rate {
     display: none;
   }
 
-  .mobileNum{
+  .mobileNum,.mobileRate{
     margin-left:auto;
     visibility: visible;
   }

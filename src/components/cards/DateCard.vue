@@ -56,4 +56,10 @@ defineEmits(['select']);
 .monthName {
   font-size: 0.9rem;
 }
+
+@media (max-width: 768px) {
+  .dateCard {
+    padding: 0.5rem;
+  }
+}
 </style>

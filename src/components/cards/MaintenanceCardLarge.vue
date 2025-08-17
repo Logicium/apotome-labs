@@ -88,8 +88,8 @@ const props = defineProps({
 
 @media (max-width: 768px) {
   .maintenanceCardLarge {
-    grid-column: span 2;
-    grid-row: 3;
+    grid-column: span 1;
+    grid-row: 4;
   }
 }
 </style>
