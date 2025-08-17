@@ -77,8 +77,8 @@ const selectPackage = (pkg) => {
   .maintenanceGrid {
     grid-template-columns: 1fr;
     grid-template-rows: auto auto auto;
-    gap: 1rem;
-    margin-top: 1rem;
+    grid-gap: 1.5rem;
+    margin-top: 1.5rem;
   }
 }
 
