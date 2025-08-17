@@ -70,6 +70,7 @@ import data from "../data/data.ts";
 
 @media (max-width: 768px) {
   .panel{
+    min-height: fit-content;
     height: fit-content;
     grid-template-rows: auto 200px 1fr;
     grid-template-columns: 1fr 1fr;

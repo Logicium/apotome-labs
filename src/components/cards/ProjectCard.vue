@@ -12,7 +12,7 @@ const props = defineProps(['name', 'type', 'description', 'image', 'featured']);
       </div>
 
       <div>
-        <div class="small">{{ description }}</div>
+        <div class="small desc">{{ description }}</div>
         <div class="button">VIEW PROJECT</div>
       </div>
     </div>
@@ -48,10 +48,15 @@ const props = defineProps(['name', 'type', 'description', 'image', 'featured']);
   width: fit-content;
 }
 
+.desc{
+  margin-top: 1rem;
+}
+
 @media (max-width: 768px) {
 
   .projectCard{
     grid-template-rows: 200px auto;
+    height: fit-content;
   }
 
 }

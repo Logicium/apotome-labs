@@ -115,6 +115,7 @@ nav{
   display: flex;
   flex-direction: column;
   z-index: 10;
+  height: 100px;
 }
 
 .logoWrap{
@@ -132,6 +133,9 @@ nav{
   padding-top: 0;
   opacity: 0;
   transition: 0.5s;
+  position: relative;
+  min-height:0;
+  interpolate-size: allow-keywords;
 }
 .menu a{
   color: white;
@@ -140,7 +144,9 @@ nav{
 .menu.active{
   opacity: 1;
   visibility: visible;
-  transition: 0.5s;
+  transition: 0.5s opacity, 0.5s min-height;
+  min-height: auto;
+  interpolate-size: allow-keywords;
 }
 
 .closeBtn{

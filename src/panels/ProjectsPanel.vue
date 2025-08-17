@@ -60,6 +60,7 @@ const featuredProjects = data.projects.list.filter(project => project.featured);
 @media (max-width: 768px) {
 
   .panel{
+    min-height: fit-content;
     height: fit-content;
   }
 
